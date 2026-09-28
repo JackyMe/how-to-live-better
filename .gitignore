@@ -1,0 +1,11 @@
+.idea/
+.junie/
+node_modules/
+dist/
+
+.DS_Store
+.env
+.env.*
+!.env.example
+design/OWNERSHIP-AUDIT.md
+design/NOTES.md

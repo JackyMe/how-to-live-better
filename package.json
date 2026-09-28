@@ -1,0 +1,12 @@
+{
+  "name": "better-life-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HowToLiveBetter 的独立视觉重设计，支持完全离线阅读",
+  "scripts": {
+    "dev": "node tools/preview/serve.mjs",
+    "build": "node tools/offline/build.mjs",
+    "preview": "node tools/preview/serve.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
