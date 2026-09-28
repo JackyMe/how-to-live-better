@@ -2,6 +2,8 @@
 
 **人生很贵，把力气花在值得的事。**
 
+[打开在线网站 ↗](https://jackyme.github.io/how-to-live-better/)
+
 基于开源内容重设计的生活指南：32 个章节、552 条建议，按成本、收益与证据查阅。
 
 ![Better Life 首页](design/desktop.png)
@@ -48,7 +50,7 @@ git commit -m "更新网站内容与交互"
 git push
 ```
 
-推送同步源码；离线文件在本地重新构建，不自动发布网站。
+推送到 `main` 后，GitHub Pages 自动更新在线网站。离线 HTML 仍使用 `npm run build` 在本地生成。
 
 ## 来源与许可
 

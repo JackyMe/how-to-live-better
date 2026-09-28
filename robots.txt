@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://jackyme.github.io/how-to-live-better/sitemap.xml

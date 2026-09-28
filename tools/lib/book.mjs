@@ -7,7 +7,7 @@ import { execSync } from 'node:child_process';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 export const REPO = 'https://github.com/JackyMe/how-to-live-better';
-export const SITE = `${REPO}#readme`; // 独立域名确定后替换
+export const SITE = 'https://jackyme.github.io/how-to-live-better/';
 export const TITLE = '高性价比人生指南';
 export const RELEASE = `${REPO}/releases/download/epub-latest`;
 

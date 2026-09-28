@@ -41,4 +41,4 @@ node tools/offline/build.mjs
 - `tools/tests/ui.cjs`：浏览器回归检查；需要可用的 Playwright 与 Chrome。可通过 `NODE_PATH` 指向已安装 Playwright 的目录，在预览服务运行时执行 `node tools/tests/ui.cjs`。
 - `CONTENT.md`：正文索引与术语表。
 
-源码同步到 GitHub，未配置网站公网部署。网站保留原仓库的内容归属与 Unlicense 许可。页面中的科学、健康、法律和财务陈述来自原仓库，本次没有逐一重新核实这些陈述。
+网站通过 GitHub Pages 发布：https://jackyme.github.io/how-to-live-better/，推送 main 后自动更新。网站保留原仓库的内容归属与 Unlicense 许可。页面中的科学、健康、法律和财务陈述来自原仓库，本次没有逐一重新核实这些陈述。
