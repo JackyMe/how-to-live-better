@@ -39,6 +39,7 @@ npm run build
 - [正文目录与术语](CONTENT.md) · [补充长文](docs/) · [来源核实记录](docs/核实记录/)
 - [人体系统专题](docs/人体系统专题.md)：7 篇原创导读、3 张原创插图，按章节推荐，支持搜索与离线阅读。
 - `content/human-system.json`：专题内容与来源；修改后运行 `node tools/companions/build.mjs` 更新网页。
+- `assets/responsive.css`：电脑、平板、手机的阅读字号、触控区域与横屏适配；由构建脚本内联到网页。
 - `index.html`：网站界面与阅读交互。
 - `book/`：32 章 Markdown 正文。
 - `tools/offline/`：零依赖离线构建。

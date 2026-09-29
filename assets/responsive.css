@@ -1,0 +1,39 @@
+/* Shared reading scale. Keep the compact homepage; enlarge content, not empty space. */
+:root{--reader-size:15px;--reader-leading:1.9}
+.human,.rows,.src .body,.intro,.guide-content{font-size:var(--reader-size);line-height:var(--reader-leading)}
+.rows .k,.src summary,.doc-links,.companion-note,.companion-library,.guide-related,.guide-sources,.guide-permalink{font-size:12px}
+.guide-content{max-width:800px;margin-inline:auto;overflow-wrap:anywhere}
+.guide-content h4{font-size:16px}.guide-content figcaption{font-size:12px;line-height:1.7}
+.guide-content figure{max-width:760px;margin:22px auto}.guide-content svg{min-height:0}
+.guide-content .guide-art-mobile{display:none}
+.companion-guide>summary{font-size:16px;min-height:52px}.companion-guide>summary small{font-size:11px}
+.large-text{--reader-size:18px}.large-text .human,.large-text .rows,.large-text .src .body,.large-text .intro,.large-text .guide-content{font-size:var(--reader-size)}
+.large-text .guide-content h4{font-size:19px}
+.card-h h3{overflow-wrap:anywhere}.sec-h h2{min-width:0}.sec-h .shown{flex-shrink:0}
+.reading-tools{gap:10px}.chapter-controls{min-width:0;flex:1 1 260px}.chapter-controls select{max-width:none}.reading-switches{flex-wrap:wrap}
+.reading-tools button,.chapter-controls select,.hero-chapter select,.stat button,.outline-button{min-height:44px}
+.reading-tools button{font-size:12px}.chapter-controls select{font-size:14px}
+#chapter-prev,#chapter-next{min-width:44px}.save-button{width:44px;min-width:44px;min-height:44px}
+#chapter-index a,.guide-sources summary,.companion-library summary,.reading-help>summary{min-height:44px;display:flex;align-items:center}
+.reading-help>summary{justify-content:space-between;gap:12px}
+.guide-related a,.guide-permalink{padding-block:8px}
+.back-top{width:44px;height:44px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}
+@media(min-width:961px){.sidebar .sec-link{font-size:12px;min-height:36px}.sidebar .chip{font-size:12px;min-height:32px}}
+@media(max-width:960px){
+ .menu-btn{width:44px;height:44px;flex-shrink:0}.sidebar{padding-bottom:max(24px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}.sidebar .sec-link{min-height:44px;font-size:14px}.sidebar .chip{min-height:44px;padding:8px 12px}.sidebar .toggle{min-height:44px;display:flex;align-items:center}
+ .search input{font-size:16px;min-height:44px}.chapter-controls select,.hero-chapter select{font-size:16px}
+ .switch{width:44px;height:44px;border-radius:24px}.switch .knob{top:12px}.switch .knob{left:2px}
+ .card,.sec-block,#companions,.companion-guide{scroll-margin-top:230px}
+}
+@media(max-width:640px){
+ .nav-in{padding-inline:max(12px,env(safe-area-inset-left));gap:6px}.title{font-size:19px;gap:6px;white-space:nowrap}.title .logo{width:24px;height:24px}.search{max-width:44px;flex-shrink:0}.search input{width:44px}.search svg{left:13px}
+ .library-layout,.library-heading{margin-inline:16px}.card{padding:18px 14px}.card-h{gap:7px}.card-h h3{font-size:17px}.human{padding:12px}.badge{font-size:11px}.rows{gap:5px}.rows .k{font-size:12px}.doc-head .reader-note{font-size:12px}.doc-head .stat{font-size:11px;gap:5px}.stat #text-size,.stat #saved-filter{font-size:11px;padding:8px}
+ .chapter-controls{flex-basis:100%;gap:5px}.chapter-controls label{display:none}.reading-tools{padding:8px 0;gap:6px}.reading-switches{gap:4px}.reading-tools button{padding:8px 6px;font-size:11px}.segmented{padding:2px}.reading-tools .segmented button{font-size:10px;padding-inline:5px}
+ #companions>summary{padding:15px 12px}#companions>summary small{font-size:12px}.companion-body{padding:0 8px 12px}.companion-guide>summary{padding:14px 12px;gap:8px;align-items:flex-start}.companion-guide>summary span{flex:1;min-width:0}.companion-guide>summary small{font-size:11px;line-height:24px}.guide-content{padding:0 12px 16px}.guide-content ol{padding-left:20px}.guide-content aside{padding:12px}.guide-content figure{max-width:340px}.guide-content .guide-art-wide{display:none}.guide-content .guide-art-mobile{display:block}.companion-note{line-height:1.8}.companion-library ul{padding-left:20px}
+ .hero-chapter select{min-height:44px}.path-card p{font-size:10px}.path-card h3{font-size:13px}.hero-actions .primary,.hero-actions .text-action{min-height:44px;display:inline-flex;align-items:center}.evidence-help .method p{font-size:12px}
+}
+/* Short landscape screens need room for the article, not a second pinned header. */
+@media(max-height:500px) and (max-width:960px){.reading-tools{position:static}.card,.sec-block,#companions,.companion-guide{scroll-margin-top:calc(var(--nav-h) + 14px)}.sidebar .sec-links{max-height:none}.hero-art{height:240px}}
+
+html{scroll-padding-top:calc(var(--nav-h) + 16px)}
+.card,.sec-block,#companions,.companion-guide{scroll-margin-top:max(0px,calc(var(--reading-offset,230px) - var(--nav-h) - 16px))}
