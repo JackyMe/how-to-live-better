@@ -28,3 +28,23 @@
 @keyframes art-arrive{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:no-preference){.hero-copy{animation:hero-arrive .7s var(--ease-out) both}.hero-art{animation:art-arrive .9s ease-out both}}
 @media(max-height:500px){.navigator-eyebrow{display:none}.navigator-head h2{margin:4px 0 10px;font-size:20px}.navigator-head{align-items:center}.navigator-search input{min-height:44px}.navigator-topics{flex-wrap:nowrap;overflow-x:auto;margin:8px 0;flex-shrink:0}.navigator-topics button{white-space:nowrap;flex-shrink:0;min-height:40px}.navigator-foot{margin-top:8px;padding-top:4px}.navigator-status{margin-bottom:6px}}
+/* Reading surfaces and feedback share the same radius and quiet elevation. */
+:root{--surface-radius:12px;--surface-shadow:0 2px 4px #16302203,0 12px 32px #16302205}
+.card,.companion-guide{border-radius:var(--surface-radius);box-shadow:var(--surface-shadow)}
+.card:focus-within{border-color:var(--brand-1)}
+button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible{outline:2px solid var(--brand-1);outline-offset:4px}
+button{transition:background-color .18s,color .18s,border-color .18s,box-shadow .18s}
+.reading-tools{border-bottom-color:var(--divider)}
+@supports(background:color-mix(in srgb,white,transparent)){.reading-tools{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(18px)}}
+.navigator-close{transition:transform .18s,background .18s}.navigator-close:active{transform:scale(.93)}
+#chapter-navigator::backdrop{transition:opacity .18s}#chapter-navigator.is-closing::backdrop{opacity:0}
+.navigator-grid{mask-image:linear-gradient(#000 calc(100% - 12px),transparent);padding-bottom:14px}
+.filters-open{overflow:hidden}.sidebar-dismiss{display:none}
+.chapter-quote{margin:24px 0;padding:22px 24px;border-left:2px solid #a6bc82;background:var(--bg-alt);border-radius:0 12px 12px 0}
+.chapter-quote blockquote{margin:0;font-size:clamp(17px,1.5vw,21px);font-weight:500;line-height:1.8;letter-spacing:.02em;text-wrap:pretty;color:var(--t1)}
+.chapter-quote figcaption{font-size:11px;letter-spacing:.04em;color:var(--t2);margin-top:10px}
+.brief-reading .chapter-quote{display:none}
+@media(hover:hover) and (pointer:fine){.card:hover{box-shadow:0 4px 8px #16302204,0 16px 40px #16302209}.navigator-close:hover{background:var(--bg-alt)}.guide-related a:hover,.guide-permalink:hover{text-decoration:underline;text-underline-offset:4px}}
+@media(max-width:960px){.sidebar-dismiss{display:flex;align-items:center;justify-content:flex-end;width:100%;min-height:44px;margin-bottom:12px;font-size:13px;color:var(--t2)}}
+@media(max-width:640px){.chapter-quote{padding:18px;margin:20px 0}.card{border-radius:12px}.reading-tools{backdrop-filter:blur(12px)}}
+@media(prefers-reduced-motion:reduce){#chapter-navigator::backdrop{transition:none!important}}
