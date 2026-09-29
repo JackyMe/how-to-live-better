@@ -28,13 +28,13 @@ function initExperience(){
     closing=motion.finished.catch(()=>{}).then(()=>{finish();motion.cancel();}).finally(()=>{closing=null;});return closing;
   };
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
-  document.getElementById('hero-chapter').addEventListener('click',open);
+  for(const id of ['hero-chapter','reader-chapter','shelf-search'])document.getElementById(id).addEventListener('click',open);
   dialog.querySelector('.navigator-close').addEventListener('click',close);
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
   dialog.addEventListener('close',()=>{if(!dialog.open){document.documentElement.classList.remove('navigator-open');document.getElementById('hero-chapter').setAttribute('aria-expanded','false');}});
   query.addEventListener('input',render);
   dialog.querySelector('.navigator-topics').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;category=+b.dataset.category;dialog.querySelectorAll('[data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();animate(grid,[{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'none'}]);});
-  const choose=async n=>{if(closing)return;await close();onlySaved=false;state.q='';for(const d of DIMS)state[d].clear();if(n)state.sec.add(n);state.dispute=false;state.todo=false;apply();const title=document.getElementById('reading-title');title.tabIndex=-1;title.focus({preventScroll:true});document.getElementById('library').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});};
+  const choose=async n=>{if(closing)return;await close();openReaderChapter(n);};
   grid.addEventListener('click',e=>{const b=e.target.closest('[data-chapter]');if(b)choose(b.dataset.chapter);});
   dialog.querySelector('.navigator-all').addEventListener('click',()=>choose(''));
   query.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();grid.querySelector('button:not([hidden])')?.focus();}if(e.key==='Enter'){const results=[...grid.children].filter(b=>!b.hidden);if(results.length===1){e.preventDefault();choose(results[0].dataset.chapter);}}});

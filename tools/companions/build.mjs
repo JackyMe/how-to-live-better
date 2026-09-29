@@ -15,6 +15,8 @@ let html=read('index.html');
 const replace=(tag,value)=>{const re=new RegExp('/\\* '+tag+' BEGIN \\*/[\\s\\S]*?/\\* '+tag+' END \\*/');if(!re.test(html))throw Error('Missing '+tag);html=html.replace(re,()=>`/* ${tag} BEGIN */\n${value}\n/* ${tag} END */`);};
 replace('COMPANION STYLE',read('tools/companions/panel.css'));
 replace('RESPONSIVE STYLE',read('assets/responsive.css'));
+replace('READER STYLE',read('assets/reader.css'));
+replace('READER SCRIPT',read('tools/reader/reader.js'));
 replace('EXPERIENCE STYLE',read('assets/experience.css'));
 replace('EXPERIENCE SCRIPT',read('tools/experience/interface.js'));
 replace('COMPANION SCRIPT','const COMPANIONS = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n'+read('tools/companions/panel.js'));

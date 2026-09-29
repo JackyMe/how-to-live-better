@@ -11,6 +11,7 @@
 ## 为阅读而设计
 
 - **找到起点**：健康与精力、金钱与工作、安全与关系三个场景。
+- **专注阅读**：分页章节书架，每次只展示一条建议；条目目录、上一条 / 下一条、章末续读、各章进度记忆和浏览器前进后退。
 - **章节导航**：可搜索的主题面板，电脑双列、手机底部展开，支持键盘选择。
 - **自由切换**：上一章 / 下一章、章内目录、完整阅读 / 只看说人话。
 - **快速筛选**：全文搜索、A级证据、钱 / 时间 / 毅力，以及本地收藏。
@@ -43,6 +44,7 @@ npm run build
 - `content/human-system.json`：专题内容与来源；修改后运行 `node tools/companions/build.mjs` 更新网页。
 - `assets/responsive.css`：电脑、平板、手机的阅读字号、触控区域与横屏适配；由构建脚本内联到网页。
 - `assets/experience.css` 与 `tools/experience/interface.js`：章节导航与动效；构建时内联，无外部依赖。
+- `tools/reader/reader.js` 与 `assets/reader.css`：逐条阅读器、路由与进度记忆，构建时内联。
 - `index.html`：网站界面与阅读交互。
 - `book/`：32 章 Markdown 正文。
 - `tools/offline/`：零依赖离线构建。

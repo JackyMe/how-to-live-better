@@ -1,3 +1,4 @@
+const {chooseChapter,showPreferences}=require('./helpers.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const {resolve}=require('node:path');
@@ -20,9 +21,9 @@ const {pathToFileURL}=require('node:url');
  await page.locator('#q').fill('zzzz_nonexistent_24979');await waitCount(0);assert(await page.locator('#empty').isVisible());await page.locator('#reset2').click();await waitCount(552);checks.push('empty state and reset');
  await page.locator('#easy-start').click();await page.waitForFunction(()=>location.search.includes('will='));assert.match(page.url(),/money=0/);assert.match(decodeURIComponent(page.url()),/will=否/);assert(Number(await page.locator('#cnt').textContent())>0);checks.push('zero-cost / low-effort combined filtering');
  await page.locator('#clear-top').click();await waitCount(552);
- await page.locator('#e-1-1 .save-button').click();assert.equal(await page.locator('#saved-count').textContent(),'1');await page.locator('#saved-filter').click();await waitCount(1);assert(await page.locator('#e-1-1').isVisible());
+ await chooseChapter(page,'1');await showPreferences(page);await page.locator('#e-1-1 .save-button').click();assert.equal(await page.locator('#saved-count').textContent(),'1');await page.locator('#saved-filter').click();await waitCount(1);assert(await page.locator('#e-1-1').isVisible());
  await page.reload();await ready(page);assert.equal(await page.locator('#saved-count').textContent(),'1');assert.equal(await page.locator('#e-1-1 .save-button').getAttribute('aria-pressed'),'true');checks.push('bookmark persisted across reload');
- await page.locator('#text-size').click();assert(await page.locator('html').evaluate(el=>el.classList.contains('large-text')));await page.reload();await ready(page);assert.equal(await page.locator('#text-size').getAttribute('aria-pressed'),'true');await page.locator('#text-size').click();checks.push('reading font preference persisted');
+ await showPreferences(page);await page.locator('#text-size').click();assert(await page.locator('html').evaluate(el=>el.classList.contains('large-text')));await page.reload();await ready(page);assert.equal(await page.locator('#text-size').getAttribute('aria-pressed'),'true');await showPreferences(page);await page.locator('#text-size').click();checks.push('reading font preference persisted');
  await page.locator('#e-1-1 .src summary').click();assert(await page.locator('#e-1-1 .src .body a').first().isVisible());checks.push('expand original citations');
  await page.locator('#theme').click();assert(await page.locator('html').evaluate(el=>el.classList.contains('dark')));await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'design/dark.png'});await page.locator('#theme').click();checks.push('dark theme');
  await page.locator('#library').scrollIntoViewIfNeeded();await page.screenshot({path:'design/library.png'});

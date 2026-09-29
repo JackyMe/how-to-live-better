@@ -372,6 +372,27 @@ button{transition:background-color .18s,color .18s,border-color .18s,box-shadow 
 @media(prefers-reduced-motion:reduce){#chapter-navigator::backdrop{transition:none!important}}
 
 /* EXPERIENCE STYLE END */
+/* READER STYLE BEGIN */
+#reader-workspace{outline:none;scroll-margin-top:12px}.doc{max-width:100%}.shelf-mode .reading-tools,.shelf-mode #chapter-index,.shelf-mode #list,.shelf-mode .foot{display:none}.shelf-mode .reader-note{display:none}
+#chapter-shelf{padding:22px 0}.shelf-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}.shelf-heading span,.entry-eyebrow{font-size:9px;letter-spacing:1.8px;color:var(--t2)}.shelf-heading h3{font-size:23px;font-weight:550;margin:8px 0 0}.shelf-heading button,.shelf-pager button{min-height:44px;padding:10px 14px;border:1px solid var(--divider);border-radius:8px;font-size:12px;background:var(--bg-elv)}
+.shelf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.shelf-grid button{display:grid;grid-template-columns:36px 1fr;align-items:center;gap:6px 10px;text-align:left;padding:18px;border:1px solid var(--divider);border-radius:12px;background:var(--bg-elv);min-height:98px}.shelf-grid button>span{grid-row:span 2;font-size:24px;font-weight:350;color:var(--t3)}.shelf-grid strong{font-size:15px;font-weight:550;line-height:1.6}.shelf-grid small{font-size:11px;color:var(--t2)}.shelf-grid button:hover{border-color:var(--brand-1);background:var(--bg-alt)}.shelf-pager{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:20px;font-size:12px}.shelf-pager button{min-width:44px}
+#reader-chapter{display:grid;grid-template-columns:1fr 20px;gap:3px;text-align:left;flex:1;min-width:0;padding:8px 14px;background:var(--bg-elv);border-radius:10px}#reader-chapter small{font-size:10px;color:var(--t2)}#reader-chapter span{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#reader-chapter b{grid-column:2;grid-row:1/3;align-self:center;font-weight:400}.chapter-controls label[hidden],#chapter-select[hidden]{display:none!important}
+#entry-navigation{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--divider);margin-bottom:20px}#entry-position{display:block;font-size:13px;font-weight:500;margin-top:5px}.entry-actions{display:flex;gap:6px}.entry-actions button{min-width:44px;min-height:44px;padding:8px 12px;border:1px solid var(--divider);border-radius:8px;font-size:12px;background:var(--bg-elv)}
+#list .sec-block{margin:0}#list .card{content-visibility:visible;contain-intrinsic-size:none;margin:16px 0 0}#list .sec-h{margin:0 0 10px}#list .sec-h h2{font-size:15px;color:var(--t2)}#list .shown{display:none}.chapter-overview{font-size:12px;margin:10px 0 16px;border-bottom:1px solid var(--divider)}.chapter-overview>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--t2)}.chapter-overview .intro{font-size:14px}.chapter-overview .chapter-quote{margin:16px 0}.chapter-overview .chapter-quote blockquote{font-size:17px}
+#chapter-index{background:var(--bg-elv)}#chapter-index nav{max-height:280px}#chapter-index a{padding:8px;border-radius:6px}#chapter-index a[aria-current=true]{background:var(--brand-soft);color:var(--brand-1)}
+#entry-footer{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 32px}#entry-footer button{border:1px solid var(--divider);background:var(--bg-alt);border-radius:12px;padding:16px;text-align:left;min-height:84px}#entry-footer small{display:block;font-size:11px;color:var(--t2);margin-bottom:8px}#entry-footer span{font-size:14px;line-height:1.6}#entry-footer button:disabled{opacity:.45}#finish-chapter{background:var(--t1)!important;color:var(--bg)}#finish-chapter small{color:inherit;opacity:.75}button:disabled{cursor:default}
+.reading-tools{gap:10px}#companions{margin:14px 0}#companions>summary{padding:12px 16px}#companions>summary strong{font-size:12px}.doc-head .reader-note{font-size:12px}.doc-head .reading-help{border:0}
+@media(max-width:640px){.shelf-grid{gap:8px}.shelf-grid button{display:block;padding:12px;min-height:114px}.shelf-grid button>span{font-size:19px;display:block;margin-bottom:5px}.shelf-grid strong{font-size:13px;display:block}.shelf-grid small{font-size:10px;display:block;margin-top:5px}.shelf-heading h3{font-size:19px}.shelf-heading button{font-size:11px;padding:8px}.shelf-heading>div>span{font-size:8px}.entry-actions button{padding:8px}.entry-eyebrow{font-size:8px}#entry-position{font-size:12px}#entry-list{font-size:11px}#entry-footer{gap:8px}#entry-footer button{padding:12px}#entry-footer span{font-size:13px}#reader-chapter span{font-size:14px}.chapter-overview .intro{font-size:14px}#list .sec-h h2{font-size:14px}.doc-head .stat{margin:8px 0}.reading-tools{position:static}#reader-workspace{scroll-margin-top:0px}}
+@media(prefers-reduced-motion:no-preference){#list .card:not([hidden]){animation:reader-arrive .22s ease-out}@keyframes reader-arrive{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}}
+/* The reading surface starts with content; secondary controls stay on demand. */
+.doc-head .reader-note{display:none}.doc-head{padding-bottom:10px}.reader-title{gap:10px}.reader-title>div{flex:1}.reader-title h2{margin:0;font-size:18px}#reader-options{min-height:44px;padding:8px 12px;font-size:12px;border:1px solid var(--divider);border-radius:8px;background:var(--bg-elv)}
+#reader-options-panel{padding:16px;background:var(--bg-alt);border:1px solid var(--divider);border-radius:12px;margin:12px 0}#reader-options-panel .stat{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;margin-bottom:14px}#reader-options-panel .reading-switches{justify-content:flex-start}#reader-options-panel button{min-height:44px;padding:8px 12px;border:1px solid var(--divider);border-radius:7px}#reader-options-panel .reading-help{margin-top:14px}
+#chapter-index:not([open]){display:none}#entry-navigation{margin-top:0;padding:12px 0;scroll-margin-top:max(0px,calc(var(--reading-offset,180px) - var(--nav-h) - 16px));outline:none}#list .sec-h{display:none}.chapter-overview{margin-top:20px}.reading-tools{padding:10px 0}#reader-chapter{min-height:54px}.chapter-controls{flex-basis:100%;width:100%}#entry-footer{margin-top:16px}.doc>.foot{font-size:10px;color:var(--t3);max-width:760px}.shelf-mode .doc-head{border-bottom:0}
+@media(max-width:640px){.reading-tools{position:sticky;top:var(--nav-h)}.reader-title h2{font-size:16px}.reader-title{flex-wrap:wrap}.reader-title>div{min-width:140px}#reader-options{font-size:11px;padding:8px}.filter-mobile{font-size:11px}#entry-navigation{gap:6px}#entry-list{padding-inline:8px}#reader-options-panel .stat{font-size:11px}}
+@media(max-height:500px) and (max-width:960px){.reading-tools{position:static}}
+#list,#entry-footer,#entry-navigation,#chapter-index,#companions{max-width:860px;margin-inline:auto}.doc>.foot{margin-inline:auto}#chapter-prev,#chapter-next{font-size:11px;padding-inline:10px;white-space:nowrap}
+
+/* READER STYLE END */
 </style>
 </head>
 <body>
@@ -412,7 +433,7 @@ button{transition:background-color .18s,color .18s,border-color .18s,box-shadow 
   </div>
 </noscript>
 
-<div class="reading-progress" aria-hidden="true"><i id="reading-progress"></i></div><header class="nav">
+<div class="reading-progress"><i id="reading-progress"></i></div><header class="nav">
   <div class="nav-in">
     <button class="icon-btn menu-btn" id="menu" aria-label="打开筛选" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></button>
     <a class="title" href="./"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>better life<span class="brand-dot">↗</span></span></a><nav class="nav-links" aria-label="主导航"><a href="#explore">探索指南</a><a href="#library">知识库</a><a href="#method">关于证据</a></nav>
@@ -462,7 +483,7 @@ button{transition:background-color .18s,color .18s,border-color .18s,box-shadow 
 <button class="path-card safety" data-path="safety"><div class="path-top"><span>03 / SAFETY & CONNECTION</span><span class="path-arrow">↗</span></div><div class="path-symbol safety-symbol" aria-hidden="true">◎</div><h3>安全与关系</h3><p>家庭关系 · 法律常识 · 生活安全</p><span class="path-link">探索安全与关系 <span>→</span></span></button>
 </div></section>
 
-<div class="library-heading" id="library"><div><div class="eyebrow">THE KNOWLEDGE LIBRARY</div><h2>从这里，开始读。</h2></div><button class="outline-button" id="clear-top">浏览全部建议 ↗</button></div>
+<div class="library-heading" id="library"><div><div class="eyebrow">THE KNOWLEDGE LIBRARY</div><h2>从这里，开始读。</h2></div><button class="outline-button" id="clear-top">返回章节书架 ↗</button></div>
 <div class="library-layout">
 <div class="backdrop" id="backdrop"></div>
 <div class="pop" id="pop" role="tooltip" hidden><b></b><span></span></div>
@@ -528,7 +549,7 @@ button{transition:background-color .18s,color .18s,border-color .18s,box-shadow 
   <div class="hint">
     <p>章节一次只看一个，成本和等级可多选。同一组多选是「或」，不同组之间是「且」。</p>
     <p>每节内按性价比从高到低排，检索不改变顺序。</p>
-    <p>正文与标签来自仓库 <a href="book/">book/</a> 下的 32 个文件，改正文即改这里。</p>
+    <p>每次阅读一条；条目目录可直接跳转，切换章节会保留上次读到的位置。</p>
   </div>
 </aside>
 
@@ -554,7 +575,7 @@ button{transition:background-color .18s,color .18s,border-color .18s,box-shadow 
         <div><button id="reset2">清空筛选</button></div>
       </div>
     </div>
-    <div class="foot">数字口径以条目内标注为准：第 1、2 节是 ACM 或特定死因，第 3、4 节是精力/时间，第 5 节是金钱，第 7 节是金钱与保障，第 8、9 节是金钱与人身自由，互不换算。来源核实过程见 <a href="https://github.com/JackyMe/how-to-live-better/tree/main/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95">docs/核实记录</a>。Unlicense，公有领域。</div>
+    <div class="foot">数字口径以条目内标注为准：第 1、2 节是 ACM 或特定死因，第 3、4 节是精力/时间，第 5 节是金钱，第 7 节是金钱与保障，第 8、9 节是金钱与人身自由，互不换算。正文目录见 <a href="book/">book/</a>；来源核实过程见 <a href="https://github.com/JackyMe/how-to-live-better/tree/main/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95">docs/核实记录</a>。Unlicense，公有领域。</div>
   </div>
 </main></div><footer class="brand-footer"><div class="footer-wordmark">better life<span>↗</span></div><div><span>生活没有标准答案。<br>但选择，可以更有依据。</span><a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener">原作 HowToLiveBetter ↗</a><span>独立视觉重设计 · Unlicense</span></div></footer><button class="back-top" id="back-top" aria-label="返回顶部">↑</button><div id="toast" role="status" aria-live="polite"></div>
 
@@ -867,105 +888,9 @@ function showXref(a){
   POP.style.left = Math.max(window.scrollX + 14,
     Math.min(window.scrollX + r.left, window.scrollX + vw - POP.offsetWidth - 14)) + 'px';
 }
-// 滚到哪条，地址栏就停在哪条，随手复制 URL 就能把这一条发给别人。
-// 必须用 replaceState：滚一下推一条历史记录，后退键就彻底废了。
-let spyT = 0, spyLast = '', spyOff = false;
-function spy(){
-  if (spyOff) return;
-  clearTimeout(spyT);
-  spyT = setTimeout(() => {
-    const line = innerHeight * 0.3;        // 判定线取视口偏上三成，和人读的位置差不多
-    let hit = '', near = Infinity;
-    // 还在页首读导读和筛选器时，没有「正在看的那一条」，地址栏就该是干净的。
-    // 否则停在最上面也会被记成 #e-1-1，一刷新就滚到第 1 节标题、导读全没了
-    // （2026-09-20 用户提的）。判据是第一个节块的顶还在判定线以下。
-    const firstBlock = BLOCKS.find(b => b.el.offsetParent)?.el;
-    if (firstBlock && firstBlock.getBoundingClientRect().top > line){
-      if (spyLast === '') return;
-      spyLast = '';
-      history.replaceState(history.state, '', location.pathname + location.search);
-      return;
-    }
-    for (const c of CARDS){
-      // 不看 card.vis：那是 CARD_IO 维护的渲染标记，滞后于滚动。直接量一次位置，
-      // 高度为 0 的就是被筛选藏起来的，顺带一并跳过。
-      const r = c.el.getBoundingClientRect();
-      if (!r.height || r.bottom <= 0 || r.top >= innerHeight) continue;
-      if (r.top <= line && r.bottom > line){ hit = c.el.id; break; }   // 跨过判定线的优先
-      const d = Math.abs(r.top - line);
-      if (d < near){ near = d; hit = c.el.id; }
-    }
-    if (hit === spyLast) return;
-    spyLast = hit;
-    history.replaceState(history.state, '', location.pathname + location.search + (hit ? '#' + hit : ''));
-  }, 160);
-}
-addEventListener('scroll', spy, { passive: true });
-
-// 卡片是懒渲染的，没渲染过的那些矮一截。直接滚过去会停在半路：滚动沿途的卡片被
-// IntersectionObserver 补渲染、高度撑开，目标又被往下推了，跨节跳时尤其明显。
-// 所以先把目标本身渲染出来，再反复校正位置，直到两次之间不再变化（或试满 10 次）。
-// 整节指路落到节首，所以对齐方式要分开：条目居中看得清上下文，整节必须顶到视口
-// 上沿——一整节有几十条、高好几屏，block:'center' 会把它的中点摆到视口中间，落点
-// 在节当中，跳过去等于没跳（2026-09-20 用户点第 13 节撞到的）。顶部对齐靠 html 上
-// 那条 scroll-padding-top 让开吸顶导航。flash 也要分开：.flash 的样式只挂在 .card
-// 上，整块 section 加了不显示，闪的是节标题那一行。
-function scrollToEl(el, { align = 'center', flashEl = el, spyId = el.id, renderEl = el } = {}){
-  spyOff = true;                           // 校正期间别让 spy 把地址栏改成沿途的条目
-  const card = CARD_OF.get(renderEl);      // 滚到节块时要预渲染的是节里第一张卡片
-  if (card && card.key !== CUR_KEY) renderCard(card, CUR_TERMS, CUR_KEY);
-  let tries = 0, lastY = NaN;
-  const settle = () => {
-    el.scrollIntoView({block: align});
-    const y = Math.round(el.getBoundingClientRect().top);
-    if (++tries < 10 && y !== lastY){ lastY = y; setTimeout(settle, 50); return; }
-    flashEl.classList.remove('flash'); void flashEl.offsetWidth; flashEl.classList.add('flash');
-    spyLast = spyId; spyOff = false;       // 停稳了地址栏就归这一条，再放 spy 回来
-  };
-  settle();
-}
-// 一节的第一条，滚的时候连它上面的节标题一起带进视野：整节指路落地就是这个位置，
-// 刷新、把链接发给别人也该看到同一屏。不然地址栏一样、画面不一样——点过去看得见
-// 「13. 紧急情况」，刷新之后标题在视口上面、直接从第一条开始（2026-09-20 用户提的）。
-function scrollAnchor(el){
-  const block = el.closest?.('.sec-block');
-  return block && el.id === `e-${block.dataset.sec}-1` ? block : el;
-}
 function gotoItem(key, fromId){
-  const sec = key[0] === 's' ? key.slice(1) : '';
-  const id = sec ? 'sec-' + sec : `e-${key.split('-')[0]}-${key.split('-')[1]}`;
-  const el = document.getElementById(id);
-  if (!el) return;
-  if (!el.offsetParent){
-    onlySaved = false;            // 目标被筛选藏起来了，先把筛选清掉再跳
-    state.q = ''; for (const d of DIMS) state[d].clear();
-    syncControls(); apply(); writeUrl();
-  }
-  // 把「从哪跳的」写进当前这条历史记录，再推一条新的，这样浏览器后退键和鼠标侧键
-  // 能回到原处。记的是来源卡片的 id 而不只是滚动条位置——往回走时沿途卡片会被补
-  // 渲染撑开，原来那个像素值早就不指向同一处了，只有按 id 重新定位才准。
-  history.replaceState({ xrefFrom: fromId || '', xrefY: window.scrollY }, '');
-  // 地址栏写的不是 #sec-13 而是节里第一条的 #e-13-1：spy 一滚就会把 #sec-13 换成
-  // 那个形状（刷新时也是），与其让用户看着 hash 自己变，不如从一开始就写成同一个
-  // 形状——分享出去的链接也就和页面自己产生的链接对得上了。
-  const first = sec ? document.getElementById(`e-${sec}-1`) : null;
-  history.pushState(null, '', '#' + (first?.id || id));
-  if (sec){
-    scrollToEl(el, { align: 'start', flashEl: el.querySelector('.sec-h') || el, spyId: first?.id || id, renderEl: first || el });
-    return;
-  }
-  // 条目一律居中看得清上下文，只有一节的第一条例外：滚它所在的节块、顶部对齐，
-  // 这样「第 13 节」和「第 13 节第 1 条」两种指路落在同一屏，闪的还是那张卡片。
-  const anchor = scrollAnchor(el);
-  scrollToEl(anchor, anchor === el ? {} : { align: 'start', flashEl: el, spyId: el.id, renderEl: el });
+  if(key.startsWith('s'))openReaderChapter(key.slice(1));else openReaderItem('e-'+key);
 }
-addEventListener('popstate', ev => {
-  POP.hidden = true;
-  const st = ev.state; if (!st) return;
-  const back = st.xrefFrom && document.getElementById(st.xrefFrom);
-  if (back) scrollToEl(back);
-  else if (typeof st.xrefY === 'number') scrollTo({ top: st.xrefY });
-});
 document.addEventListener('click', ev => {
   const a = ev.target.closest?.('.xref');
   if (a){ showXref(a); return; }
@@ -1064,13 +989,13 @@ function initExperience(){
     closing=motion.finished.catch(()=>{}).then(()=>{finish();motion.cancel();}).finally(()=>{closing=null;});return closing;
   };
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
-  document.getElementById('hero-chapter').addEventListener('click',open);
+  for(const id of ['hero-chapter','reader-chapter','shelf-search'])document.getElementById(id).addEventListener('click',open);
   dialog.querySelector('.navigator-close').addEventListener('click',close);
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
   dialog.addEventListener('close',()=>{if(!dialog.open){document.documentElement.classList.remove('navigator-open');document.getElementById('hero-chapter').setAttribute('aria-expanded','false');}});
   query.addEventListener('input',render);
   dialog.querySelector('.navigator-topics').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;category=+b.dataset.category;dialog.querySelectorAll('[data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();animate(grid,[{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'none'}]);});
-  const choose=async n=>{if(closing)return;await close();onlySaved=false;state.q='';for(const d of DIMS)state[d].clear();if(n)state.sec.add(n);state.dispute=false;state.todo=false;apply();const title=document.getElementById('reading-title');title.tabIndex=-1;title.focus({preventScroll:true});document.getElementById('library').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});};
+  const choose=async n=>{if(closing)return;await close();openReaderChapter(n);};
   grid.addEventListener('click',e=>{const b=e.target.closest('[data-chapter]');if(b)choose(b.dataset.chapter);});
   dialog.querySelector('.navigator-all').addEventListener('click',()=>choose(''));
   query.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();grid.querySelector('button:not([hidden])')?.focus();}if(e.key==='Enter'){const results=[...grid.children].filter(b=>!b.hidden);if(results.length===1){e.preventDefault();choose(results[0].dataset.chapter);}}});
@@ -1105,6 +1030,74 @@ function animateReadingChange(){
 }
 
 /* EXPERIENCE SCRIPT END */
+/* READER SCRIPT BEGIN */
+/* A bounded reader: chapter shelf, one entry at a time, explicit navigation history. */
+const reader={ready:false,items:[],active:null,key:'',pending:'',hash:'',shelfPage:0,memory:{}};
+function readerMatches(card,terms){const e=card.e;return (!onlySaved||saved.has(card.el.id))&&DIMS.every(d=>!state[d].size||state[d].has(e[d]))&&(!state.dispute||e.dispute)&&(!state.todo||e.todo)&&terms.every(t=>e.hay.includes(t));}
+function clearReaderFilters(){onlySaved=false;state.q='';for(const d of DIMS)state[d].clear();state.dispute=false;state.todo=false;}
+function readerRoute(){readUrl();onlySaved=new URLSearchParams(location.search).get('saved')==='1';const id=location.hash.slice(1);reader.routeGuide=id.startsWith('guide-');reader.hash=reader.routeGuide?id:'';reader.pending=ITEMS.has(id.slice(2))&&id.startsWith('e-')?id:'';if(/^sec-\d+$/.test(id)&&SECS.has(id.slice(4))){clearReaderFilters();state.sec.add(id.slice(4));}if(id.startsWith('guide-'))revealCompanion();}
+function prepareReader(){if(!reader.pending)return;const card=CARDS.find(c=>c.el.id===reader.pending);const terms=state.q.toLowerCase().split(/\s+/).filter(Boolean);if(card&&(!readerMatches(card,terms)||(!state.q&&!DIMS.some(d=>state[d].size)&&!onlySaved))){clearReaderFilters();state.sec.add(card.e.sec);}}
+function readerFocus(entry=false){const target=document.getElementById(entry&&reader.active?'entry-navigation':'reader-workspace');target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'instant'});}
+function openReaderChapter(n){history.pushState({reader:true},'',location.href);clearReaderFilters();if(SECS.has(n))state.sec.add(n);reader.pending='';reader.hash='';document.getElementById('chapter-index').open=false;apply();readerFocus();}
+function openReaderItem(id){if(!CARDS.some(c=>c.el.id===id))return;history.pushState({reader:true},'',location.href);reader.pending=id;reader.hash='';document.getElementById('chapter-index').open=false;document.getElementById('companions').open=false;apply();readerFocus(true);}
+function readerStep(delta){const i=reader.items.indexOf(reader.active),next=reader.items[i+delta];if(next)openReaderItem(next.el.id);}
+function initReader(){
+  document.getElementById('chapter-prev').textContent='上一章';document.getElementById('chapter-next').textContent='下一章';
+  document.getElementById('empty').setAttribute('role','status');
+  reader.ready=true;history.scrollRestoration='manual';try{const m=JSON.parse(localStorage.getItem('better-life-cursors')||'{}');if(m&&typeof m==='object'&&!Array.isArray(m))reader.memory=m;}catch{}
+  const doc=document.querySelector('.doc');doc.id='reader-workspace';doc.tabIndex=-1;
+  const options=document.createElement('section');options.id='reader-options-panel';options.hidden=true;options.setAttribute('aria-label','阅读偏好与筛选');
+  options.append(document.querySelector('.doc-head .stat'),document.querySelector('.reading-switches'),document.querySelector('.reading-help'));
+  document.querySelector('.doc-head').after(options);
+  const optionsButton=document.createElement('button');optionsButton.id='reader-options';optionsButton.textContent='阅读设置';optionsButton.setAttribute('aria-controls',options.id);optionsButton.setAttribute('aria-expanded','false');document.querySelector('.reader-title').appendChild(optionsButton);
+  optionsButton.onclick=()=>{options.hidden=!options.hidden;optionsButton.setAttribute('aria-expanded',String(!options.hidden));};
+  document.querySelector('a[href="#method"]').addEventListener('click',()=>{options.hidden=false;optionsButton.setAttribute('aria-expanded','true');});
+  const shelf=document.createElement('section');shelf.id='chapter-shelf';shelf.innerHTML='<div class="shelf-heading"><div><span>THE CHAPTER LIBRARY</span><h3>选一章，从一件事开始。</h3></div><button id="shelf-search">查找章节 ↗</button></div><div class="shelf-grid"></div><div class="shelf-pager"><button id="shelf-prev" aria-label="上一页章节">←</button><span id="shelf-page"></span><button id="shelf-next" aria-label="下一页章节">→</button></div>';document.querySelector('.reading-tools').before(shelf);
+  const top=document.createElement('div');top.id='entry-navigation';top.innerHTML='<div><span class="entry-eyebrow">FOCUS READING</span><strong id="entry-position" aria-live="polite"></strong></div><div class="entry-actions"><button id="entry-list">本章目录 ☷</button><button id="entry-prev" aria-label="上一条">←</button><button id="entry-next" aria-label="下一条">→</button></div>';document.getElementById('list').before(top);
+  const bottom=document.createElement('nav');bottom.id='entry-footer';bottom.setAttribute('aria-label','正文翻页');bottom.innerHTML='<button id="entry-prev-bottom"><small>上一条</small><span></span></button><button id="entry-next-bottom"><small>下一条</small><span></span></button><button id="finish-chapter" hidden><small>本章已读到最后一条</small><span>选择下一章 ↗</span></button>';document.getElementById('list').after(bottom);bottom.after(document.getElementById('companions'));
+  const tools=document.querySelector('.chapter-controls');const launcher=document.createElement('button');launcher.id='reader-chapter';launcher.setAttribute('aria-haspopup','dialog');launcher.innerHTML='<small>切换章节</small><span></span><b aria-hidden="true">⌄</b>';tools.querySelector('label').hidden=true;document.getElementById('chapter-select').hidden=true;tools.prepend(launcher);
+  for(const b of BLOCKS){const intro=document.createElement('details');intro.className='chapter-overview';intro.innerHTML='<summary>本章导读与阅读提醒</summary><div></div>';const body=intro.querySelector('div');b.el.querySelectorAll(':scope>.intro,:scope>.chapter-quote').forEach(p=>body.appendChild(p));b.el.appendChild(intro);}
+  document.getElementById('entry-prev').onclick=()=>readerStep(-1);document.getElementById('entry-prev-bottom').onclick=()=>readerStep(-1);document.getElementById('entry-next').onclick=()=>readerStep(1);document.getElementById('entry-next-bottom').onclick=()=>readerStep(1);
+  document.getElementById('entry-list').onclick=()=>{const index=document.getElementById('chapter-index');index.open=!index.open;document.getElementById('entry-list').setAttribute('aria-expanded',String(index.open));if(index.open){index.querySelector('summary').focus({preventScroll:true});index.scrollIntoView({block:'nearest',behavior:'instant'});}};
+  document.getElementById('finish-chapter').onclick=()=>{const n=reader.active?.e.sec,keys=[...SECS.keys()],next=keys[keys.indexOf(n)+1];openReaderChapter(next||'');};
+  shelf.addEventListener('click',e=>{const b=e.target.closest('[data-open-chapter]');if(b)openReaderChapter(b.dataset.openChapter);});
+  document.getElementById('shelf-prev').onclick=()=>{reader.shelfPage--;renderShelf();};document.getElementById('shelf-next').onclick=()=>{reader.shelfPage++;renderShelf();};
+  document.querySelector('.doc-head .reader-note').textContent='一次读一条，按需看证据。目录随时可跳转，各章会记住上次读到的位置。';
+  window.addEventListener('popstate',()=>{readerRoute();apply();readerFocus();});
+  window.addEventListener('hashchange',()=>{readerRoute();apply();if(reader.hash.startsWith('guide-')){document.getElementById(reader.hash)?.scrollIntoView();}else readerFocus();});
+  document.addEventListener('click',e=>{const a=e.target.closest('.guide-related a,.guide-permalink');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const url=new URL(a.href,location.href);if(url.origin!==location.origin||url.pathname!==location.pathname)return;e.preventDefault();if(url.hash.startsWith('#sec-'))openReaderChapter(url.hash.slice(5));else{history.pushState({reader:true},'',url.href);readerRoute();apply();document.getElementById(reader.hash)?.scrollIntoView();}});
+  document.getElementById('list').addEventListener('click',e=>{const a=e.target.closest('a.anchor');if(a){e.preventDefault();openReaderItem(a.hash.slice(1));}});
+}
+function renderShelf(){const chapters=[...SECS.values()],pages=Math.ceil(chapters.length/8);reader.shelfPage=Math.max(0,Math.min(reader.shelfPage,pages-1));document.querySelector('.shelf-grid').innerHTML=chapters.slice(reader.shelfPage*8,reader.shelfPage*8+8).map(s=>'<button data-open-chapter="'+s.n+'"><span>'+s.n.padStart(2,'0')+'</span><strong>'+esc(s.title)+'</strong><small>'+s.entries.length+' 条建议 ↗</small></button>').join('');document.getElementById('shelf-page').textContent=(reader.shelfPage+1)+' / '+pages;document.getElementById('shelf-prev').disabled=reader.shelfPage===0;document.getElementById('shelf-next').disabled=reader.shelfPage===pages-1;}
+function updateReader(){
+  if(!reader.ready)return;
+  const key=JSON.stringify([state.q,...DIMS.map(d=>[...state[d]]),state.dispute,state.todo,onlySaved]);
+  const directory=!state.q&&!DIMS.some(d=>state[d].size)&&!state.dispute&&!state.todo&&!onlySaved;
+  const changed=reader.key!==key;reader.key=key;if(changed&&!reader.routeGuide&&reader.hash.startsWith('guide-'))reader.hash='';reader.routeGuide=false;
+  reader.items=CARDS.filter(c=>!c.el.hidden);
+  const memoryKey=state.sec.size===1?'chapter-'+[...state.sec][0]:key;
+  const preferred=reader.pending||(!changed?reader.active?.el.id:null)||reader.memory[memoryKey];
+  reader.active=directory?null:reader.items.find(c=>c.el.id===preferred)||reader.items[0]||null;reader.pending='';
+  if(changed){document.querySelectorAll('.chapter-overview').forEach(d=>d.open=false);document.getElementById('chapter-index').open=false;if(!reader.hash.startsWith('guide-')&&!state.q)document.getElementById('companions').open=false;}
+  for(const card of CARDS)card.el.hidden=card!==reader.active;
+  for(const block of BLOCKS)block.el.hidden=block.n!==reader.active?.e.sec;
+  if(reader.active){const c=reader.active;renderCard(c,CUR_TERMS,CUR_KEY);reader.memory[memoryKey]=c.el.id;if(state.sec.size===1){try{const data=Object.fromEntries(Object.entries(reader.memory).filter(([k])=>k.startsWith('chapter-')));localStorage.setItem('better-life-cursors',JSON.stringify(data));}catch{}}}
+  reader.hash=directory?'':reader.hash.startsWith('guide-')?reader.hash:reader.active?.el.id||'';
+  document.getElementById('chapter-shelf').hidden=!directory;if(directory)renderShelf();
+  document.getElementById('reader-workspace').classList.toggle('shelf-mode',directory);
+  document.getElementById('entry-list').setAttribute('aria-expanded',String(document.getElementById('chapter-index').open));const progress=document.getElementById('reading-progress');const position=reader.active?reader.items.indexOf(reader.active)+1:0;progress.style.width=(reader.items.length?position/reader.items.length*100:0)+'%';progress.setAttribute('aria-label','当前条目位置');progress.setAttribute('role','progressbar');progress.setAttribute('aria-valuemin','0');progress.setAttribute('aria-valuemax',String(reader.items.length||1));progress.setAttribute('aria-valuenow',String(position));
+  document.getElementById('entry-navigation').hidden=!reader.active;document.getElementById('entry-footer').hidden=!reader.active;
+  if(directory){document.getElementById('reading-title').textContent='章节书架';document.getElementById('companions').hidden=true;}
+  if(reader.active){const i=reader.items.indexOf(reader.active),len=reader.items.length;document.getElementById('entry-position').textContent='第 '+(i+1)+' / '+len+' 条'+(state.sec.size===1?' · 本章':' · 筛选结果');document.getElementById('entry-prev').disabled=i===0;document.getElementById('entry-next').disabled=i===len-1;const prev=document.getElementById('entry-prev-bottom'),next=document.getElementById('entry-next-bottom');prev.disabled=i===0;prev.querySelector('span').textContent=reader.items[i-1]?.e.title||'已是第一条';next.hidden=i===len-1;next.querySelector('span').textContent=reader.items[i+1]?.e.title||'';document.getElementById('finish-chapter').hidden=i!==len-1||state.sec.size!==1;}
+}
+function syncReaderIndex(){
+  const index=document.getElementById('chapter-index');index.hidden=!reader.active;
+  const nav=index.querySelector('nav');nav.replaceChildren();document.getElementById('index-count').textContent=reader.items.length+' 条';
+  for(const c of reader.items){const a=document.createElement('a');a.href='#'+c.el.id;a.textContent=(state.sec.size===1?c.e.n:c.e.sec+'.'+c.e.n)+'. '+c.e.title;if(c===reader.active)a.setAttribute('aria-current','true');nav.appendChild(a);}
+  document.getElementById('reader-chapter').querySelector('span').textContent=state.sec.size===1?SECS.get([...state.sec][0])?.title||'选择章节':state.sec.size?'主题阅读':'选择章节';
+}
+
+/* READER SCRIPT END */
 function build(sections){
   for (const s of sections){ SECS.set(s.n, s); for (const e of s.entries) ITEMS.set(`${s.n}-${e.n}`, e); }
   const list = document.getElementById('list');
@@ -1191,7 +1184,8 @@ function writeUrl(){
   for (const d of DIMS) if (state[d].size) p.set(d, [...state[d]].join(','));
   if (state.dispute) p.set('dispute','1'); if (state.todo) p.set('todo','1');
   if (PERF.on) p.set('perf','1');
-  const qs = p.toString(); history.replaceState(null, '', (qs ? '?'+qs : location.pathname) + location.hash);
+  if(onlySaved)p.set('saved','1');
+  const qs = p.toString(); history.replaceState({reader:true}, '', (qs ? '?'+qs : location.pathname) + (reader.hash?'#'+reader.hash:''));
 }
 function syncControls(){
   document.getElementById('q').value = state.q;
@@ -1218,6 +1212,7 @@ function renderCard(card, terms, key){
   card.key = key;
 }
 function apply(){
+  prepareReader();
   const t0 = performance.now();
   const terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
   const key = terms.join(' ');
@@ -1225,17 +1220,7 @@ function apply(){
   let shown = 0, rerender = 0; const perSec = {};
   for (const card of CARDS){
     const {e, el} = card;
-    let ok = !onlySaved || saved.has(el.id);
-    if (state.sec.size && !state.sec.has(e.sec)) ok = false;
-    if (ok && state.ratio.size && !state.ratio.has(e.ratio)) ok = false;
-    if (ok && state.lens.size && !state.lens.has(e.lens)) ok = false;
-    if (ok && state.grade.size && !state.grade.has(e.grade)) ok = false;
-    if (ok && state.money.size && !state.money.has(e.money)) ok = false;
-    if (ok && state.time.size && !state.time.has(e.time)) ok = false;
-    if (ok && state.will.size && !state.will.has(e.will)) ok = false;
-    if (ok && state.dispute && !e.dispute) ok = false;
-    if (ok && state.todo && !e.todo) ok = false;
-    if (ok && terms.length && !terms.every(t => e.hay.includes(t))) ok = false;
+    let ok = readerMatches(card,terms);
     if (el.hidden === ok) el.hidden = !ok;
     if (ok){
       shown++; perSec[e.sec] = (perSec[e.sec]||0)+1;
@@ -1248,7 +1233,7 @@ function apply(){
   document.getElementById('empty').hidden = shown !== 0 || guideCount !== 0;
   document.getElementById('reading-title').textContent = onlySaved ? '我的收藏' : state.sec.size === 1 ? (SECS.get([...state.sec][0])?.title || '筛选结果') : state.sec.size ? '为你筛选的生活建议' : state.q ? '搜索：' + state.q : '全部生活建议';
   document.getElementById('saved-filter').setAttribute('aria-pressed', String(onlySaved));
-  syncControls(); syncReadingTools(); writeUrl(); animateReadingChange();
+  updateReader(); syncControls(); syncReadingTools(); writeUrl(); animateReadingChange();
   PERF.log('apply', t0, `命中 ${shown} 条，重渲染 ${rerender} 张`);
 }
 
@@ -1264,9 +1249,7 @@ function syncReadingTools(){
   document.getElementById('chapter-prev').disabled=i<=0;
   document.getElementById('chapter-next').disabled=i<0||i===chapters.length-1;
   document.getElementById('quick-a').setAttribute('aria-pressed',String(state.grade.size===1&&state.grade.has('A')));
-  const index=document.getElementById('chapter-index');index.hidden=state.sec.size!==1;
-  const nav=index.querySelector('nav');nav.replaceChildren();
-  if(!index.hidden){const visible=CARDS.filter(c=>!c.el.hidden);document.getElementById('index-count').textContent=visible.length+' 条';for(const card of visible){const a=document.createElement('a');a.href='#'+card.el.id;a.textContent=card.e.n+'. '+card.e.title;nav.appendChild(a);}}
+  syncReaderIndex();
 }
 function wireReadingTools(reset){
   // Match anchor clearance to the actual toolbar height, including wrapped controls.
@@ -1279,11 +1262,10 @@ function wireReadingTools(reset){
   new ResizeObserver(updateReadingOffset).observe(readingTools);
   window.addEventListener('resize',updateReadingOffset,{passive:true});
   updateReadingOffset();
-  const jump=()=>{apply();document.getElementById('reading-title').scrollIntoView({block:'start'});};
   const select=document.getElementById('chapter-select');
   document.querySelector('a[href="#method"]').addEventListener('click',()=>{document.querySelector('.reading-help').open=true;document.getElementById('method').open=true;});
-  select.addEventListener('change',()=>{state.sec=new Set(select.value?[select.value]:[]);jump();});
-  for(const [id,step] of [['chapter-prev',-1],['chapter-next',1]])document.getElementById(id).addEventListener('click',()=>{const keys=[...SECS.keys()],i=keys.indexOf(select.value);if(i<0||!keys[i+step])return;state.sec=new Set([keys[i+step]]);jump();});
+  select.addEventListener('change',()=>openReaderChapter(select.value));
+  for(const [id,step] of [['chapter-prev',-1],['chapter-next',1]])document.getElementById(id).addEventListener('click',()=>{const keys=[...SECS.keys()],i=keys.indexOf(select.value);if(i<0||!keys[i+step])return;openReaderChapter(keys[i+step]);});
   document.getElementById('quick-a').addEventListener('click',()=>{state.grade=state.grade.size===1&&state.grade.has('A')?new Set():new Set(['A']);apply();});
   document.getElementById('quick-all').addEventListener('click',reset);
   const setMode=mode=>{document.documentElement.classList.toggle('brief-reading',mode==='brief');document.querySelectorAll('[data-reading]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reading===mode)));};
@@ -1299,13 +1281,11 @@ function wire(){
   const setMenu = (on) => { const wasOpen=sb.classList.contains('open');sb.classList.toggle('open', on); bd.classList.toggle('on', on);document.documentElement.classList.toggle('filters-open',on); mb.setAttribute('aria-expanded', String(on)); if(on) sb.querySelector('button')?.focus();else if(wasOpen)mb.focus({preventScroll:true}); };
   const dismiss=document.createElement('button');dismiss.className='sidebar-dismiss';dismiss.textContent='收起筛选 ×';dismiss.addEventListener('click',()=>setMenu(false));sb.prepend(dismiss);
   window.addEventListener('resize',()=>{if(innerWidth>960&&sb.classList.contains('open'))setMenu(false);});
-  // 筛选变了就顺手让 spy 重算一次 hash：writeUrl 是无条件把旧 hash 拼回去的，
-  // 而滚回顶部时页面若本来就在顶部不会触发 scroll，hash 会僵在一个已经被筛掉的
-  // 条目上，拼出 ?sec=8#e-11-1 这种自相矛盾的地址。
-  const toTop = () => { setMenu(false); document.getElementById("library").scrollIntoView(); spy(); };
+  const toTop = () => { setMenu(false); document.getElementById("reader-workspace").scrollIntoView({behavior:'instant'}); };
   document.querySelectorAll('[data-dim]').forEach(g => g.addEventListener('click', ev => {
     const b = ev.target.closest('[data-v]'); if (!b) return;
     const dim = g.dataset.dim, v = b.dataset.v, set = state[dim];
+    if(dim==='sec'){openReaderChapter(v);toTop();return;}
     if (dim === 'sec'){
       // 章节单选：再点一次已选中的不取消，免得双击退回全部章节；要看全部点「全部章节」
       if (v === '') set.clear(); else { set.clear(); set.add(v); }
@@ -1326,8 +1306,6 @@ function wire(){
   const setTextSize = large => { document.documentElement.classList.toggle('large-text',large); textSize.setAttribute('aria-pressed',String(large)); textSize.textContent=large?'Aa 标准字号':'Aa 大字号'; };
   try {setTextSize(localStorage.getItem('better-life-text')==='large');} catch {}
   textSize.addEventListener('click',()=>{const large=!document.documentElement.classList.contains('large-text');setTextSize(large);try{localStorage.setItem('better-life-text',large?'large':'normal');}catch{}});
-  let progressTick=false;
-  addEventListener('scroll',()=>{if(progressTick)return;progressTick=true;requestAnimationFrame(()=>{const total=document.documentElement.scrollHeight-innerHeight;document.getElementById('reading-progress').style.width=(total>0?Math.min(100,Math.max(0,scrollY/total*100)):0)+'%';progressTick=false;});},{passive:true});
   sb.addEventListener('keydown',e=>{if(e.key!=='Tab'||!sb.classList.contains('open'))return;const buttons=[...sb.querySelectorAll('button,a,input')].filter(x=>x.offsetParent);const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
 
   document.getElementById('mobile-filter').addEventListener('click', () => { setMenu(true); });
@@ -1440,26 +1418,9 @@ async function readText(path, tries = 3){
     PERF.log('解析正文', t1, files.length + ' 个文件');
     status.remove();
     const t2 = performance.now(); build(sections); PERF.log('建 DOM', t2, CARDS.length + ' 张卡');
-    buildCompanions(); buildGlossary(); readUrl(); wire(); initExperience(); revealCompanion(); apply();
-    window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#guide-')){revealCompanion();apply();document.querySelector(location.hash)?.scrollIntoView();}});
-    PERF.mark(`DOM 节点 ${document.getElementsByTagName('*').length}，术语 ${GLOSS.length}`);
-    if (location.hash){
-      let target = document.getElementById(location.hash.slice(1));
-      // 别人分享过来的地址可能带着和 hash 冲突的筛选（老版本拼出来的 ?sec=8#e-11-1），
-      // 这时按 hash 办：点链接就是要看那一条，筛选清掉。
-      if (target && !target.offsetParent){
-        onlySaved = false;
-        state.q = ''; for (const d of DIMS) state[d].clear();
-        state.dispute = false; state.todo = false;
-        syncControls(); apply(); writeUrl();
-      }
-      // 落到一节的第一条时滚它所在的节块，节标题跟着进视野——和点「见第 13 节」
-      // 跳过去看到的是同一屏，地址栏也是同一个 #e-13-1
-      const land = target ? scrollAnchor(target) : null;
-      land?.scrollIntoView();
-      // 卡片是 content-visibility:auto，首次定位后高度才准，下一帧再对一次
-      if (land) requestAnimationFrame(() => land.scrollIntoView());
-    }
+    buildCompanions(); buildGlossary(); readUrl(); initReader(); wire(); initExperience(); readerRoute(); apply();
+    if(location.hash.startsWith('#guide-'))document.getElementById(location.hash.slice(1))?.scrollIntoView();
+    else if(location.hash||state.sec.size)readerFocus();
   } catch (err) {
     if (err.message === 'file'){
       status.innerHTML = '这个页面要通过 http 打开才能读取正文。在仓库目录运行 <code>python -m http.server</code>，然后访问 <code>http://localhost:8000/</code>；或直接用 GitHub Pages 地址。';

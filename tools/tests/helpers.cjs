@@ -1,0 +1,2 @@
+exports.chooseChapter=async(p,n)=>{await p.locator(await p.locator('#reader-chapter').isVisible()?'#reader-chapter':'#hero-chapter').click();await p.locator(n?'[data-chapter="'+n+'"]':'.navigator-all').click();await p.waitForFunction(n=>document.getElementById('chapter-select').value===n,n);};
+exports.showPreferences=async p=>{if(!(await p.locator('#reader-options-panel').isVisible()))await p.locator('#reader-options').click();};
