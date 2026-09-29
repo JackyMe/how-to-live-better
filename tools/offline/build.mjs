@@ -2,6 +2,7 @@
 // 用法：node tools/offline/build.mjs [输出路径]   默认输出 dist/HowToLiveBetter.html
 // 正文内联进 window.__CORPUS__，index.html 的 init() 认这个变量就不再发请求；
 // 正文内联，保留页面内置的 SVG 和样式。
+import '../companions/build.mjs';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { ROOT, REPO, SITE, read, gitCommit, buildStamp } from '../lib/book.mjs';

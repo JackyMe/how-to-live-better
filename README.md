@@ -37,6 +37,8 @@ npm run build
 ## 内容与维护
 
 - [正文目录与术语](CONTENT.md) · [补充长文](docs/) · [来源核实记录](docs/核实记录/)
+- [人体系统专题](docs/人体系统专题.md)：7 篇原创导读、3 张原创插图，按章节推荐，支持搜索与离线阅读。
+- `content/human-system.json`：专题内容与来源；修改后运行 `node tools/companions/build.mjs` 更新网页。
 - `index.html`：网站界面与阅读交互。
 - `book/`：32 章 Markdown 正文。
 - `tools/offline/`：零依赖离线构建。
@@ -57,3 +59,5 @@ git push
 内容源自 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)，按 [Unlicense](LICENSE) 使用。此仓库由 [JackyMe](https://github.com/JackyMe) 维护视觉与阅读体验改造，保留原文证据和不确定性，不代表对全部健康、法律或财务结论重新核实。
 
 阅读交互参考 [cdyforever/how-to-live-better](https://cdyforever.github.io/how-to-live-better/)。
+
+新增专题参考 [HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) 的主题组织，以原创导读和原文入口接入；未复制其正文或图片。该仓库未声明转载许可，其原文不适用本站许可。三篇知乎外链尚未取得正文，目前仅收录入口，详见[收录说明](docs/人体系统专题.md)。
