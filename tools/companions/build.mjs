@@ -15,6 +15,8 @@ let html=read('index.html');
 const replace=(tag,value)=>{const re=new RegExp('/\\* '+tag+' BEGIN \\*/[\\s\\S]*?/\\* '+tag+' END \\*/');if(!re.test(html))throw Error('Missing '+tag);html=html.replace(re,()=>`/* ${tag} BEGIN */\n${value}\n/* ${tag} END */`);};
 replace('COMPANION STYLE',read('tools/companions/panel.css'));
 replace('RESPONSIVE STYLE',read('assets/responsive.css'));
+replace('EXPERIENCE STYLE',read('assets/experience.css'));
+replace('EXPERIENCE SCRIPT',read('tools/experience/interface.js'));
 replace('COMPANION SCRIPT','const COMPANIONS = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n'+read('tools/companions/panel.js'));
 writeFileSync(root+'index.html',html);
 console.log('Embedded '+data.guides.length+' guides and '+data.guides.filter(g=>g.art).length+' original diagrams.');

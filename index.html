@@ -319,6 +319,39 @@ html{scroll-padding-top:calc(var(--nav-h) + 16px)}
 .card,.sec-block,#companions,.companion-guide{scroll-margin-top:max(0px,calc(var(--reading-offset,230px) - var(--nav-h) - 16px))}
 
 /* RESPONSIVE STYLE END */
+/* EXPERIENCE STYLE BEGIN */
+/* A small, shared motion vocabulary: arrive, select, expand. */
+:root{--ease-out:cubic-bezier(.22,1,.36,1);--motion-fast:180ms;--motion-slow:420ms}
+.hero-chapter{display:block;max-width:460px;margin-top:18px}
+#hero-chapter{width:100%;display:flex;align-items:center;gap:14px;text-align:left;padding:12px 16px;border:1px solid var(--divider);border-radius:12px;background:var(--bg-elv);color:var(--t1);box-shadow:0 3px 12px #1c362a05;transition:border-color .25s,box-shadow .25s,transform .25s}
+.chapter-launch-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--brand-soft);flex-shrink:0}.chapter-launch-icon svg{width:20px;height:20px;stroke:var(--brand-1);fill:none;stroke-width:1.5}
+.chapter-launch-copy{display:block;min-width:0;flex:1}.chapter-launch-title{display:block;font-size:14px;font-weight:550;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chapter-launch-note{display:block;font-size:11px;color:var(--t2);margin-top:3px}.chapter-launch-arrow{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--divider);font-size:18px;transition:transform .3s var(--ease-out),background .3s}
+#hero-chapter:hover{border-color:#8caa7c;box-shadow:0 8px 26px #243c2910;transform:translateY(-2px)}#hero-chapter:hover .chapter-launch-arrow{transform:rotate(45deg);background:var(--brand-soft)}#hero-chapter:focus-visible{outline:2px solid var(--brand-1);outline-offset:4px}
+.navigator-open{overflow:hidden;scrollbar-gutter:stable}
+#chapter-navigator{width:min(760px,calc(100vw - 48px));max-height:min(780px,calc(100dvh - 64px));padding:28px;border:1px solid var(--divider);border-radius:22px;background:var(--bg);color:var(--t1);box-shadow:0 32px 120px #061a3055;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+#chapter-navigator::backdrop{background:#10251ed0;backdrop-filter:blur(9px);animation:backdrop-arrive .35s ease-out}
+.navigator-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.navigator-eyebrow{font-size:10px;letter-spacing:2px;color:var(--t2)}.navigator-head h2{font-size:28px;letter-spacing:-1px;margin:7px 0 20px;font-weight:550}.navigator-close{width:44px;height:44px;flex-shrink:0;font-size:25px;border:1px solid var(--divider);border-radius:50%;background:var(--bg-elv)}
+.navigator-search{display:flex;align-items:center;gap:12px;border:1px solid var(--divider);border-radius:10px;background:var(--bg-elv);padding:0 14px;transition:box-shadow .2s,border-color .2s}.navigator-search:focus-within{border-color:var(--brand-1);box-shadow:0 0 0 3px var(--brand-soft)}.navigator-search svg{width:20px;height:20px;stroke:var(--t2);stroke-width:1.5;fill:none;flex-shrink:0}.navigator-search input{width:100%;min-width:0;min-height:50px;border:0;outline:0;background:transparent;color:var(--t1);font:inherit;font-size:16px}
+.navigator-topics{display:flex;gap:7px;margin:18px 0 12px;flex-wrap:wrap}.navigator-topics button{min-height:40px;padding:7px 12px;border:1px solid var(--divider);border-radius:30px;font-size:12px;transition:background .2s,color .2s}.navigator-topics button[aria-pressed="true"]{background:var(--t1);color:var(--bg);border-color:var(--t1)}.navigator-status{font-size:11px;color:var(--t2);margin-bottom:10px}
+.navigator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.navigator-chapter{display:flex;align-items:center;gap:12px;min-height:74px;padding:12px;text-align:left;border:1px solid var(--divider);border-radius:10px;background:var(--bg-elv);transition:background .2s,border-color .2s,transform .2s}.navigator-number{font-size:19px;color:var(--t3);font-variant-numeric:tabular-nums}.navigator-chapter>span:nth-child(2){flex:1;min-width:0}.navigator-chapter strong{display:block;font-size:13px;font-weight:550;line-height:1.5}.navigator-chapter small{display:block;margin-top:5px;font-size:10px;color:var(--t2)}.navigator-arrow{font-size:18px;color:var(--t3);transition:transform .25s}.navigator-chapter:hover,.navigator-chapter[aria-current="true"]{background:var(--bg-alt);border-color:#8caa7c}.navigator-chapter:hover .navigator-arrow{transform:translate(2px,-2px)}.navigator-chapter:focus-visible{outline:2px solid var(--brand-1);outline-offset:2px}.navigator-empty{padding:36px 12px;text-align:center;font-size:14px;color:var(--t2)}.navigator-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px;border-top:1px solid var(--divider);padding-top:12px;font-size:11px;color:var(--t2)}.navigator-all{min-height:44px;color:var(--brand-1);font-size:12px}
+.hero-art{transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .6s var(--ease-out)}
+.segmented{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr}.segmented:before{content:"";position:absolute;inset:3px auto 3px 3px;width:calc((100% - 6px)/2);border-radius:5px;background:var(--t1);z-index:-1;transition:transform .32s var(--ease-out)}.brief-reading .segmented:before{transform:translateX(100%)}.reading-tools .segmented button[aria-pressed="true"]{background:transparent}.segmented button{transition:color .22s}
+.primary:active,.navigator-chapter:active,.path-card:active,#hero-chapter:active{transform:scale(.985)}
+.nav,.sidebar,.reading-tools,.card,.companion-guide,#companions{transition:background-color .25s,border-color .25s,box-shadow .25s}.nav{backdrop-filter:blur(16px)}
+@keyframes backdrop-arrive{from{opacity:0}to{opacity:1}}
+@media(max-width:640px){.hero-chapter{max-width:none;margin-top:12px}#hero-chapter{padding:10px 12px;gap:10px;border-radius:11px}.chapter-launch-title{font-size:13px}.chapter-launch-note{font-size:10px}.chapter-launch-icon{width:32px;height:32px}.chapter-launch-arrow{width:28px;height:28px}#chapter-navigator{width:100%;max-width:100%;max-height:90dvh;margin:auto 0 0;border-radius:22px 22px 0 0;padding:20px 16px max(20px,env(safe-area-inset-bottom));border-bottom:0}.navigator-head h2{font-size:24px;margin-bottom:16px}.navigator-topics{gap:6px;margin-top:14px}.navigator-topics button{min-height:44px;padding:8px 11px;font-size:12px}.navigator-grid{grid-template-columns:1fr}.navigator-chapter{min-height:70px;padding:12px 14px}.navigator-chapter strong{font-size:15px}.navigator-chapter small{font-size:11px}.navigator-foot>span{display:none}.navigator-foot{justify-content:flex-end}.segmented:before{inset:2px auto 2px 2px;width:calc((100% - 4px)/2)}}
+@media(max-height:500px){#chapter-navigator{max-height:calc(100dvh - 16px);padding:16px}.navigator-head h2{font-size:22px;margin-bottom:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero-art{transform:none!important}}
+
+#chapter-navigator[open]{display:flex;flex-direction:column;overflow:hidden}.navigator-head,.navigator-search,.navigator-topics,.navigator-status,.navigator-foot{flex-shrink:0}.navigator-grid{overflow-y:auto;min-height:0;padding:2px;overscroll-behavior:contain;scrollbar-width:thin}.sidebar{transition:transform .4s var(--ease-out),background-color .25s}
+@media(prefers-reduced-motion:reduce){#chapter-navigator::backdrop{animation:none!important}}
+
+@keyframes hero-arrive{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes art-arrive{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:no-preference){.hero-copy{animation:hero-arrive .7s var(--ease-out) both}.hero-art{animation:art-arrive .9s ease-out both}}
+@media(max-height:500px){.navigator-eyebrow{display:none}.navigator-head h2{margin:4px 0 10px;font-size:20px}.navigator-head{align-items:center}.navigator-search input{min-height:44px}.navigator-topics{flex-wrap:nowrap;overflow-x:auto;margin:8px 0;flex-shrink:0}.navigator-topics button{white-space:nowrap;flex-shrink:0;min-height:40px}.navigator-foot{margin-top:8px;padding-top:4px}.navigator-status{margin-bottom:6px}}
+
+/* EXPERIENCE STYLE END */
 </style>
 </head>
 <body>
@@ -383,7 +416,7 @@ html{scroll-padding-top:calc(var(--nav-h) + 16px)}
     <h1 id="hero-title">人生很贵。<br>把力气花在<span class="headline-em">值得的事。</span></h1>
     <p class="hero-desc">少一点试错，多一点笃定。<br>一份有据可查的生活指南，帮你看清每个选择的成本与回报。</p>
     <div class="hero-actions"><a class="primary" href="#library">直接开始阅读 <span>↗</span></a><button class="text-action" id="easy-start">从不花钱的小事开始 <span>→</span></button></div>
-    <div class="hero-chapter"><label for="hero-chapter">32 个章节，按需查阅</label><select id="hero-chapter"><option value="">选择你关心的章节 →</option></select></div>
+    <div class="hero-chapter"><button id="hero-chapter" type="button" aria-haspopup="dialog" aria-controls="chapter-navigator" aria-expanded="false"><span class="chapter-launch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><path d="M14 17.5h7m-3.5-3.5v7"/></svg></span><span class="chapter-launch-copy"><strong class="chapter-launch-title">找到此刻需要的答案</strong><span class="chapter-launch-note">32 个章节 · 按主题探索</span></span><span class="chapter-launch-arrow" aria-hidden="true">↗</span></button></div>
     <div class="hero-note"><span class="tiny-mark">✳</span> 不必成为更完美的人。挑走一两条，就算数。</div>
   </div>
   <div class="hero-art" aria-hidden="true">
@@ -980,6 +1013,60 @@ function revealCompanion(){
 }
 
 /* COMPANION SCRIPT END */
+/* EXPERIENCE SCRIPT BEGIN */
+/* Chapter navigator and motion: no external dependencies, including offline builds. */
+let chapterNavigator;
+function syncChapterLauncher(){
+  const n=state.sec.size===1?[...state.sec][0]:'';
+  const button=document.getElementById('hero-chapter');button.value=n;
+  button.querySelector('.chapter-launch-title').textContent=n?SECS.get(n).title:'找到此刻需要的答案';
+  button.querySelector('.chapter-launch-note').textContent=n?'正在阅读第 '+n+' 章 · 点击切换':'32 个章节 · 按主题探索';
+}
+function initExperience(){
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const animate=(el,frames,options={})=>{if(!reduced.matches&&el) return el.animate(frames,{duration:320,easing:'cubic-bezier(.22,1,.36,1)',...options});};
+  const dialog=document.createElement('dialog');dialog.id='chapter-navigator';dialog.setAttribute('aria-labelledby','navigator-title');
+  dialog.innerHTML='<div class="navigator-head"><div><span class="navigator-eyebrow">YOUR NEXT CHAPTER</span><h2 id="navigator-title">从此刻的需要开始。</h2></div><button class="navigator-close" aria-label="关闭章节导航">×</button></div><label class="navigator-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="chapter-query" type="search" placeholder="搜索章节名称或编号" aria-label="搜索章节" autocomplete="off"></label><div class="navigator-topics" role="group" aria-label="按主题筛选"></div><div class="navigator-status" aria-live="polite"></div><div class="navigator-grid"></div><p class="navigator-empty" hidden>暂时没有匹配章节，试试其他关键词。</p><div class="navigator-foot"><span>选择一章，直接开始阅读</span><button class="navigator-all">浏览全部章节 <span aria-hidden="true">↗</span></button></div>';
+  document.body.appendChild(dialog);chapterNavigator=dialog;
+  const groups=[['全部',null],['健康与状态',['1','2','3','13','16','17','20','22','24','27','28']],['时间与成长',['4','19','23','30','31','32']],['财务与风险',['5','6','7','8','9','11','12','14','26']],['关系与生活',['10','15','18','21','25','29']]];
+  const grid=dialog.querySelector('.navigator-grid'),query=dialog.querySelector('input');let category=0;let opener;
+  for(const [i,[name]] of groups.entries()){const b=document.createElement('button');b.textContent=name;b.dataset.category=i;b.setAttribute('aria-pressed',String(i===0));dialog.querySelector('.navigator-topics').appendChild(b);}
+  for(const [n,s] of SECS){const b=document.createElement('button');b.className='navigator-chapter';b.dataset.chapter=n;b.innerHTML='<span class="navigator-number">'+n.padStart(2,'0')+'</span><span><strong>'+esc(s.title)+'</strong><small>'+s.entries.length+' 条建议</small></span><span class="navigator-arrow" aria-hidden="true">↗</span>';grid.appendChild(b);}
+  const render=()=>{let count=0;const terms=query.value.trim().toLowerCase().split(/\s+/).filter(Boolean);for(const b of grid.children){const s=SECS.get(b.dataset.chapter);b.hidden=!!(groups[category][1]&&!groups[category][1].includes(s.n))||!terms.every(t=>(s.n+' '+s.title).toLowerCase().includes(t));b.setAttribute('aria-current',String(state.sec.size===1&&state.sec.has(s.n)));if(!b.hidden)count++;}dialog.querySelector('.navigator-status').textContent=count+' 个章节';dialog.querySelector('.navigator-empty').hidden=count>0;grid.scrollTop=0;};
+  const open=()=>{opener=document.activeElement;category=0;query.value='';dialog.querySelectorAll('[data-category]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category==='0')));render();dialog.showModal();document.documentElement.classList.add('navigator-open');document.getElementById('hero-chapter').setAttribute('aria-expanded','true');(innerWidth>640?query:dialog.querySelector('.navigator-close')).focus({preventScroll:true});animate(dialog,[{opacity:0,transform:innerWidth<=640?'translateY(36px)':'translateY(16px) scale(.97)'},{opacity:1,transform:'none'}],{duration:420});};
+  const close=()=>{dialog.close();document.documentElement.classList.remove('navigator-open');document.getElementById('hero-chapter').setAttribute('aria-expanded','false');opener?.focus({preventScroll:true});};
+  dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
+  document.getElementById('hero-chapter').addEventListener('click',open);
+  dialog.querySelector('.navigator-close').addEventListener('click',close);
+  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
+  dialog.addEventListener('close',()=>{if(!dialog.open){document.documentElement.classList.remove('navigator-open');document.getElementById('hero-chapter').setAttribute('aria-expanded','false');}});
+  query.addEventListener('input',render);
+  dialog.querySelector('.navigator-topics').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;category=+b.dataset.category;dialog.querySelectorAll('[data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();animate(grid,[{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'none'}]);});
+  const choose=n=>{close();onlySaved=false;state.q='';for(const d of DIMS)state[d].clear();if(n)state.sec.add(n);state.dispute=false;state.todo=false;apply();const title=document.getElementById('reading-title');title.tabIndex=-1;title.focus({preventScroll:true});document.getElementById('library').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});};
+  grid.addEventListener('click',e=>{const b=e.target.closest('[data-chapter]');if(b)choose(b.dataset.chapter);});
+  dialog.querySelector('.navigator-all').addEventListener('click',()=>choose(''));
+  query.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();grid.querySelector('button:not([hidden])')?.focus();}if(e.key==='Enter'){const results=[...grid.children].filter(b=>!b.hidden);if(results.length===1){e.preventDefault();choose(results[0].dataset.chapter);}}});
+  // Native dialog traps focus and Escape closes it. Do not run global shortcuts inside it.
+  dialog.addEventListener('keydown',e=>e.stopPropagation());
+  const reveal=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;animate(entry.target,[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:650});reveal.unobserve(entry.target);}},{threshold:.15});
+  document.querySelectorAll('.path-card,.library-heading').forEach(el=>{if(el.getBoundingClientRect().top>=innerHeight)reveal.observe(el);});
+  document.addEventListener('toggle',e=>{if(e.target.tagName!=='DETAILS'||!e.target.open)return;const body=e.target.querySelector('.guide-content,.companion-body,.body,nav');if(body)animate(body,[{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:280});},true);
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-save]');if(b)animate(b,[{transform:'scale(1)'},{transform:'scale(1.23)',offset:.45},{transform:'scale(1)'}],{duration:360});});
+  const art=document.querySelector('.hero-art');let frame=0;
+  art.addEventListener('pointermove',e=>{if(reduced.matches||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{const r=art.getBoundingClientRect();art.style.setProperty('--tilt-x',((e.clientY-r.top)/r.height-.5)*-5+'deg');art.style.setProperty('--tilt-y',((e.clientX-r.left)/r.width-.5)*5+'deg');});});
+  art.addEventListener('pointerleave',()=>{cancelAnimationFrame(frame);art.style.setProperty('--tilt-x','0deg');art.style.setProperty('--tilt-y','0deg');});
+  let artVisible=true;const pauseArt=()=>{art.querySelector('.sculpture').style.animationPlayState=artVisible&&!document.hidden?'running':'paused';};new IntersectionObserver(entries=>{artVisible=entries[0].isIntersecting;pauseArt();}).observe(art);document.addEventListener('visibilitychange',pauseArt);
+  reduced.addEventListener('change',()=>{if(reduced.matches){document.getAnimations().forEach(a=>a.cancel());art.style.setProperty('--tilt-x','0deg');art.style.setProperty('--tilt-y','0deg');}});
+}
+let lastMotionKey='';
+function animateReadingChange(){
+  const key=location.search+'|'+document.documentElement.classList.contains('brief-reading');
+  if(key===lastMotionKey)return;lastMotionKey=key;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  CARDS.filter(c=>!c.el.hidden).slice(0,5).forEach((c,i)=>{c.el.getAnimations().forEach(a=>a.cancel());c.el.animate([{opacity:.25,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:300,delay:i*28,easing:'cubic-bezier(.22,1,.36,1)'});});
+}
+
+/* EXPERIENCE SCRIPT END */
 function build(sections){
   for (const s of sections){ SECS.set(s.n, s); for (const e of s.entries) ITEMS.set(`${s.n}-${e.n}`, e); }
   const list = document.getElementById('list');
@@ -1031,7 +1118,7 @@ function build(sections){
     list.appendChild(block);
     BLOCKS.push({n:s.n, el:block, k:block.querySelector('.shown .k')});
   }
-  for (const sec of sections) {const opt=document.createElement('option');opt.value=sec.n;opt.textContent=sec.n+'. '+sec.title;document.getElementById('chapter-select').appendChild(opt);document.getElementById('hero-chapter').appendChild(opt.cloneNode(true));}
+  for (const sec of sections) {const opt=document.createElement('option');opt.value=sec.n;opt.textContent=sec.n+'. '+sec.title;document.getElementById('chapter-select').appendChild(opt);}
   document.getElementById('tot').textContent = CARDS.length; document.getElementById('hero-total').textContent = CARDS.length; document.getElementById('saved-count').textContent = saved.size;
 }
 function buildGlossary(){
@@ -1116,7 +1203,7 @@ function apply(){
   document.getElementById('empty').hidden = shown !== 0 || guideCount !== 0;
   document.getElementById('reading-title').textContent = onlySaved ? '我的收藏' : state.sec.size === 1 ? (SECS.get([...state.sec][0])?.title || '筛选结果') : state.sec.size ? '为你筛选的生活建议' : state.q ? '搜索：' + state.q : '全部生活建议';
   document.getElementById('saved-filter').setAttribute('aria-pressed', String(onlySaved));
-  syncControls(); syncReadingTools(); writeUrl();
+  syncControls(); syncReadingTools(); writeUrl(); animateReadingChange();
   PERF.log('apply', t0, `命中 ${shown} 条，重渲染 ${rerender} 张`);
 }
 
@@ -1127,7 +1214,7 @@ function syncReadingTools(){
   if(state.sec.size>1&&!multi){multi=new Option('已选 '+state.sec.size+' 个章节','multi');multi.disabled=true;select.add(multi);}
   if(multi&&state.sec.size<=1)multi.remove();
   select.value=state.sec.size>1?'multi':state.sec.size?[...state.sec][0]:'';
-  document.getElementById('hero-chapter').value=state.sec.size===1?[...state.sec][0]:'';
+  syncChapterLauncher();
   const chapters=[...SECS.keys()], i=chapters.indexOf(select.value);
   document.getElementById('chapter-prev').disabled=i<=0;
   document.getElementById('chapter-next').disabled=i<0||i===chapters.length-1;
@@ -1149,7 +1236,6 @@ function wireReadingTools(reset){
   updateReadingOffset();
   const jump=()=>{apply();document.getElementById('reading-title').scrollIntoView({block:'start'});};
   const select=document.getElementById('chapter-select');
-  document.getElementById('hero-chapter').addEventListener('change',e=>{select.value=e.target.value;select.dispatchEvent(new Event('change'));});
   document.querySelector('a[href="#method"]').addEventListener('click',()=>{document.querySelector('.reading-help').open=true;document.getElementById('method').open=true;});
   select.addEventListener('change',()=>{state.sec=new Set(select.value?[select.value]:[]);jump();});
   for(const [id,step] of [['chapter-prev',-1],['chapter-next',1]])document.getElementById(id).addEventListener('click',()=>{const keys=[...SECS.keys()],i=keys.indexOf(select.value);if(i<0||!keys[i+step])return;state.sec=new Set([keys[i+step]]);jump();});
@@ -1307,7 +1393,7 @@ async function readText(path, tries = 3){
     PERF.log('解析正文', t1, files.length + ' 个文件');
     status.remove();
     const t2 = performance.now(); build(sections); PERF.log('建 DOM', t2, CARDS.length + ' 张卡');
-    buildCompanions(); buildGlossary(); readUrl(); wire(); revealCompanion(); apply();
+    buildCompanions(); buildGlossary(); readUrl(); wire(); initExperience(); revealCompanion(); apply();
     window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#guide-')){revealCompanion();apply();document.querySelector(location.hash)?.scrollIntoView();}});
     PERF.mark(`DOM 节点 ${document.getElementsByTagName('*').length}，术语 ${GLOSS.length}`);
     if (location.hash){
