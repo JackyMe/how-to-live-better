@@ -6,7 +6,15 @@
   "scripts": {
     "dev": "node tools/preview/serve.mjs",
     "build": "node tools/offline/build.mjs",
-    "preview": "node tools/preview/serve.mjs"
+    "preview": "node tools/preview/serve.mjs",
+    "editions": "node tools/publication/run.mjs",
+    "test:editions": "node tools/tests/publication.cjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "marked": "17.0.5",
+    "playwright": "1.62.1"
+  }
 }

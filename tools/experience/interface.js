@@ -4,7 +4,7 @@ function syncChapterLauncher(){
   const n=state.sec.size===1?[...state.sec][0]:'';
   const button=document.getElementById('hero-chapter');button.value=n;
   button.querySelector('.chapter-launch-title').textContent=n?SECS.get(n).title:'找到此刻需要的答案';
-  button.querySelector('.chapter-launch-note').textContent=n?'正在阅读第 '+n+' 章 · 点击切换':'32 个章节 · 按主题探索';
+  button.querySelector('.chapter-launch-note').textContent=n?'正在阅读第 '+n+' 章 · 点击切换':SECS.size+' 个章节 · 按主题探索';
 }
 function initExperience(){
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -12,7 +12,7 @@ function initExperience(){
   const dialog=document.createElement('dialog');dialog.id='chapter-navigator';dialog.setAttribute('aria-labelledby','navigator-title');
   dialog.innerHTML='<div class="navigator-head"><div><span class="navigator-eyebrow">YOUR NEXT CHAPTER</span><h2 id="navigator-title">从此刻的需要开始。</h2></div><button class="navigator-close" aria-label="关闭章节导航">×</button></div><label class="navigator-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="chapter-query" type="search" placeholder="搜索章节名称或编号" aria-label="搜索章节" autocomplete="off"></label><div class="navigator-topics" role="group" aria-label="按主题筛选"></div><div class="navigator-status" aria-live="polite"></div><div class="navigator-grid"></div><p class="navigator-empty" hidden>暂时没有匹配章节，试试其他关键词。</p><div class="navigator-foot"><span>选择一章，直接开始阅读</span><button class="navigator-all">浏览全部章节 <span aria-hidden="true">↗</span></button></div>';
   document.body.appendChild(dialog);chapterNavigator=dialog;
-  const groups=[['全部',null],['健康与状态',['1','2','3','13','16','17','20','22','24','27','28']],['时间与成长',['4','19','23','30','31','32']],['财务与风险',['5','6','7','8','9','11','12','14','26']],['关系与生活',['10','15','18','21','25','29']]];
+  const groups=[['全部',null],['健康与状态',['1','2','3','13','16','17','20','22','24','27','28','33','34']],['时间与成长',['4','19','23','30','31','32']],['财务与风险',['5','6','7','8','9','11','12','14','26']],['关系与生活',['10','15','18','21','25','29']]];
   const grid=dialog.querySelector('.navigator-grid'),query=dialog.querySelector('input');let category=0;let opener;
   for(const [i,[name]] of groups.entries()){const b=document.createElement('button');b.textContent=name;b.dataset.category=i;b.setAttribute('aria-pressed',String(i===0));dialog.querySelector('.navigator-topics').appendChild(b);}
   for(const [n,s] of SECS){const b=document.createElement('button');b.className='navigator-chapter';b.dataset.chapter=n;b.innerHTML='<span class="navigator-number">'+n.padStart(2,'0')+'</span><span><strong>'+esc(s.title)+'</strong><small>'+s.entries.length+' 条建议</small></span><span class="navigator-arrow" aria-hidden="true">↗</span>';grid.appendChild(b);}

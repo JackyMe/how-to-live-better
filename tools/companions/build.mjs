@@ -16,7 +16,7 @@ const replace=(tag,value)=>{const re=new RegExp('/\\* '+tag+' BEGIN \\*/[\\s\\S]
 replace('COMPANION STYLE',read('tools/companions/panel.css'));
 replace('RESPONSIVE STYLE',read('assets/responsive.css'));
 replace('READER STYLE',read('assets/reader.css'));
-replace('READER SCRIPT',read('tools/reader/reader.js'));
+replace('READER SCRIPT','const CONTENT_VERSION="20261009";\nconst ENTRY_MIGRATION='+JSON.stringify(JSON.parse(read('content/entry-migration.json')))+';\nconst LONG_READS='+JSON.stringify(JSON.parse(read('content/upstream-sync.json')).longReads)+';\n'+read('tools/reader/reader.js'));
 replace('EXPERIENCE STYLE',read('assets/experience.css'));
 replace('EXPERIENCE SCRIPT',read('tools/experience/interface.js'));
 replace('COMPANION SCRIPT','const COMPANIONS = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n'+read('tools/companions/panel.js'));

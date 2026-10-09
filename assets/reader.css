@@ -16,3 +16,5 @@
 @media(max-width:640px){.reading-tools{position:sticky;top:var(--nav-h)}.reader-title h2{font-size:16px}.reader-title{flex-wrap:wrap}.reader-title>div{min-width:140px}#reader-options{font-size:11px;padding:8px}.filter-mobile{font-size:11px}#entry-navigation{gap:6px}#entry-list{padding-inline:8px}#reader-options-panel .stat{font-size:11px}}
 @media(max-height:500px) and (max-width:960px){.reading-tools{position:static}}
 #list,#entry-footer,#entry-navigation,#chapter-index,#companions{max-width:860px;margin-inline:auto}.doc>.foot{margin-inline:auto}#chapter-prev,#chapter-next{font-size:11px;padding-inline:10px;white-space:nowrap}
+
+.shelf-essays{margin-top:18px;border-top:1px solid var(--divider);padding-top:16px}.shelf-essays summary{cursor:pointer;font-size:13px;line-height:1.7;color:var(--t2)}.shelf-essays summary span{font-size:11px;margin-left:10px}.shelf-essays nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;padding-top:12px}.shelf-essays a{display:flex;align-items:center;min-height:44px;font-size:13px;border-bottom:1px solid var(--divider)}@media(max-width:640px){.shelf-essays nav{grid-template-columns:1fr}}

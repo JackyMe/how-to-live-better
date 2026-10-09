@@ -47,7 +47,7 @@ ${commitLine}
 
 正文里指向仓库内其他文件的链接已改成书内跳转；指向核实记录、许可证这类没收进书的文件的链接改成了 GitHub 网址。
 
-全书以 Unlicense 发布，属于公有领域，可以随意复制、修改、分发。`;
+正文源自 eternity4719 / HowToLiveBetter（https://github.com/eternity4719/HowToLiveBetter），按 CC BY 4.0（https://creativecommons.org/licenses/by/4.0/）使用。同步于 2026-10-09；本站调整了导读、编排与阅读体验。`;
 }
 
 // ---------- Markdown → XHTML ----------
@@ -163,7 +163,7 @@ const opf = `<?xml version="1.0" encoding="UTF-8"?>
 <dc:creator>eternity4719</dc:creator>
 <dc:description>${esc(description)}</dc:description>
 <dc:source>${REPO}</dc:source>
-<dc:rights>Unlicense（公有领域）</dc:rights>
+<dc:rights>CC BY 4.0 · eternity4719 / HowToLiveBetter</dc:rights>
 <dc:date>${NOW.toISOString().slice(0, 10)}</dc:date>
 <meta property="dcterms:modified">${modified}</meta>
 <meta name="cover" content="cover-img"/>

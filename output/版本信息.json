@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-10-09T10:09:20.996Z",
+  "upstreamCommit": "a994b6a0c90598b0fe15cb837343f438dbf7b95d",
+  "contentVersion": "2026-10-09",
+  "chapters": 34,
+  "entries": 675,
+  "essays": 9,
+  "guides": 7,
+  "files": {
+    "output/html/Better-Life.html": {
+      "bytes": 3967055,
+      "sha256": "fa05c2f92a5d746f4497dfee43fae88283399c3cd65ba09d4b1aa94a49f1eeb9"
+    },
+    "output/pdf/Better-Life.pdf": {
+      "bytes": 4410762,
+      "sha256": "d8f4e8068a1883a035dc66ef4fa9b976b53dfa90d20e852bf80f2682f487eabd"
+    }
+  }
+}

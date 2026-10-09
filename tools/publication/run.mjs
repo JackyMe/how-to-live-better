@@ -1,0 +1,18 @@
+import {execFileSync} from 'node:child_process';
+import {existsSync,readFileSync,writeFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+const root=fileURLToPath(new URL('../../',import.meta.url));process.chdir(root);
+const python=process.env.PUBLICATION_PYTHON||resolve('.cache/publication/venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
+if(!existsSync(python))throw Error('先按 docs/本地阅读版生成指南.md 创建项目内 Python 环境，或设置 PUBLICATION_PYTHON。');
+const run=(cmd,args)=>execFileSync(cmd,args,{cwd:root,stdio:'inherit',env:process.env});
+run(process.execPath,['tools/offline/build.mjs']);
+run(process.execPath,['tools/publication/build.cjs']);
+run(python,['tools/publication/fonts.py']);
+run(python,['tools/publication/pdf.py']);
+const sync=JSON.parse(readFileSync('content/upstream-sync.json'));
+const files=['output/html/Better-Life.html','output/pdf/Better-Life.pdf'];
+const manifest={generatedAt:new Date().toISOString(),upstreamCommit:sync.commit,contentVersion:sync.checked,chapters:sync.chapters,entries:sync.entries,essays:sync.longReads.length,guides:7,files:Object.fromEntries(files.map(p=>{const bytes=readFileSync(p);return[p,{bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')}]}))};
+writeFileSync('output/版本信息.json',JSON.stringify(manifest,null,2)+'\n');
+console.log('已生成两份本地阅读版及版本清单。');

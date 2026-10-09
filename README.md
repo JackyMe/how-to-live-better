@@ -4,7 +4,7 @@
 
 [打开在线网站 ↗](https://jackyme.github.io/how-to-live-better/)
 
-基于开源内容重设计的生活指南：32 个章节、552 条建议，按成本、收益与证据查阅。
+基于开源内容重设计的生活指南：34 个章节、675 条建议，按成本、收益与证据查阅。
 
 ![Better Life 首页](design/desktop.png)
 
@@ -18,6 +18,12 @@
 - **清楚表达**：精修章节导语，部分章节加入原创编辑寄语；编号建议的数据、证据与来源保持独立。
 - **舒适阅读**：深浅色、大字号、手机布局；统一入场、展开、切换动效，跟随系统减少动态效果设置。
 - **完全离线**：单个 HTML 文件即可携带完整正文与阅读功能。
+
+## 随身阅读版
+
+[下载完整 PDF](output/pdf/Better-Life.pdf) · [打开独立 HTML](output/html/Better-Life.html)
+
+两份成品均由正文重新生成，包含 34 章、675 条建议、9 篇场景长文及 7 篇原创专题。HTML 支持全文搜索、分页、收藏、进度、深色和大字号；PDF 为嵌入字体的文字排版，包含目录和逐条书签。运行 `npm run editions` 可同步重建，详见[生成指南](docs/本地阅读版生成指南.md)。
 
 ## 本地运行
 
@@ -62,8 +68,12 @@ git push
 
 ## 来源与许可
 
-内容源自 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)，按 [Unlicense](LICENSE) 使用。此仓库由 [JackyMe](https://github.com/JackyMe) 维护视觉与阅读体验改造，保留原文证据和不确定性，不代表对全部健康、法律或财务结论重新核实。
+内容源自 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)，正文按 [CC BY 4.0](LICENSE) 使用；上游代码许可见 [MIT](LICENSE-CODE)。此仓库由 [JackyMe](https://github.com/JackyMe) 维护视觉与阅读体验改造，保留原文证据和不确定性，不代表对全部健康、法律或财务结论重新核实。
 
 阅读交互参考 [cdyforever/how-to-live-better](https://cdyforever.github.io/how-to-live-better/)。
 
 新增专题参考 [HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) 的主题组织，以原创导读和原文入口接入；未复制其正文或图片。该仓库未声明转载许可，其原文不适用本站许可。三篇知乎外链尚未取得正文，目前仅收录入口，详见[收录说明](docs/人体系统专题.md)。
+
+## 内容同步
+
+已同步原项目至 `a994b6a`（2026-10-09），保留本站阅读器和原创编辑寄语。新增两章、五篇场景长文，建议净增 123 条；旧收藏及阅读位置按内容迁移。详见[同步记录](docs/上游同步-2026-10-09.md)。

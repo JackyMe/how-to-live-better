@@ -9,3 +9,6 @@ dist/
 !.env.example
 design/OWNERSHIP-AUDIT.md
 design/NOTES.md
+
+.cache/
+__pycache__/

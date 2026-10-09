@@ -2,6 +2,12 @@
 
 基于 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) 的独立视觉重设计。本地项目包含原仓库内容；原文目录保存于 `CONTENT.md`；`book/`、`docs/` 和许可证保留。
 
+## 直接打开本地成品
+
+- `output/html/Better-Life.html`：独立随身阅读版，675 条建议、9 篇场景长文和 7 篇专题均内置；电脑或手机用浏览器打开。
+- `output/pdf/Better-Life.pdf`：独立排版的完整电子书，带目录、书签、页码和可选中文字。
+- 重新生成：`npm run editions`。首次环境准备和校验见 [生成指南](docs/本地阅读版生成指南.md)。
+
 ## 打开网站
 
 无需安装依赖。在本文件所在目录运行：
@@ -18,11 +24,11 @@ npm run dev
 node tools/offline/build.mjs
 ```
 
-产物：`dist/HowToLiveBetter.html`。双击即可阅读与搜索，不需要服务器或网络。32 章正文、视觉和交互都内置于文件；期刊来源、核实记录和补充长文链接仍需联网打开。
+产物：`dist/HowToLiveBetter.html`。双击即可阅读与搜索，不需要服务器或网络。34 章正文、视觉和交互都内置于文件；期刊来源、核实记录和补充长文链接仍需联网打开。
 
 ## 已有交互
 
-- 三个生活场景入口：健康与精力、金钱与工作、安全与关系，合计覆盖 32 章。
+- 三个生活场景入口：健康与精力、金钱与工作、安全与关系，合计覆盖 34 章。
 - 全文搜索，以及章节、性价比、收益口径、证据等级、钱、时间、毅力等组合筛选。
 - 一键查看不花钱且不用毅力的建议。
 - 本地收藏与收藏筛选；大字号和深浅色偏好记忆。
@@ -41,4 +47,4 @@ node tools/offline/build.mjs
 - `tools/tests/ui.cjs`：浏览器回归检查；需要可用的 Playwright 与 Chrome。可通过 `NODE_PATH` 指向已安装 Playwright 的目录，在预览服务运行时执行 `node tools/tests/ui.cjs`。
 - `CONTENT.md`：正文索引与术语表。
 
-网站通过 GitHub Pages 发布：https://jackyme.github.io/how-to-live-better/，推送 main 后自动更新。网站保留原仓库的内容归属与 Unlicense 许可。页面中的科学、健康、法律和财务陈述来自原仓库，本次没有逐一重新核实这些陈述。
+网站通过 GitHub Pages 发布：https://jackyme.github.io/how-to-live-better/，推送 main 后自动更新。网站保留原仓库的内容归属；同步正文遵循 CC BY 4.0，代码许可见 LICENSE-CODE。页面中的科学、健康、法律和财务陈述来自原仓库，本次没有逐一重新核实这些陈述。
